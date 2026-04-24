@@ -36,15 +36,33 @@ const modes = {
 const articles = [
   {
     title: "What Is Risk per Trade in Forex?",
-    description: "Learn why risking a small percentage of your account per trade can help reduce the impact of losing streaks.",
+    slug: "what-is-risk-per-trade-in-forex",
+    description: "Learn what risk per trade means in forex, how to calculate it, and why conservative risk settings matter for EA and prop firm traders.",
+    status: "Published",
   },
   {
     title: "Conservative EA Settings for Small Accounts",
+    slug: "conservative-ea-settings-for-small-accounts",
     description: "Understand why small accounts often need lower risk, fewer open trades and clear drawdown stop rules.",
+    status: "Coming soon",
+  },
+  {
+    title: "Why 0.5% Risk Is Safer for EA Beginners",
+    slug: "why-0-5-risk-is-safer-for-ea-beginners",
+    description: "A beginner-friendly explanation of why lower risk may help traders survive losing streaks during EA testing.",
+    status: "Coming soon",
+  },
+  {
+    title: "Prop Firm Daily Loss and Max Drawdown Explained",
+    slug: "prop-firm-daily-loss-and-max-drawdown-explained",
+    description: "Learn the difference between daily loss limit and maximum drawdown when trading funded account challenges.",
+    status: "Coming soon",
   },
   {
     title: "Why Martingale EA Is Dangerous for Beginners",
+    slug: "why-martingale-ea-is-dangerous-for-beginners",
     description: "A simple explanation of why increasing lot size after losses can create large drawdowns during strong trends.",
+    status: "Coming soon",
   },
 ];
 
@@ -390,7 +408,8 @@ function Header() {
           <a href="/#ea-calculator" className="hover:text-zinc-950">EA Calculator</a>
           <a href="/#prop-firm" className="hover:text-zinc-950">Prop Firm</a>
           <a href="/#drawdown" className="hover:text-zinc-950">Drawdown</a>
-          <a href="/about" className="hover:text-zinc-950">About</a>
+          <a href="/articles" className="hover:text-zinc-950">Articles</a>
+            <a href="/about" className="hover:text-zinc-950">About</a>
           <a href="/disclaimer" className="hover:text-zinc-950">Disclaimer</a>
           <a href="/contact" className="hover:text-zinc-950">Contact</a>
         </nav>
@@ -629,6 +648,220 @@ function NotFoundPage() {
   );
 }
 
+
+function ArticlesPage() {
+  return (
+    <>
+      <PageHero
+        eyebrow="Articles"
+        title="Forex risk management articles"
+        description="Beginner-friendly guides about forex risk per trade, conservative EA settings, prop firm limits and automated trading risk."
+      />
+      <ContentPage>
+        <div className="grid gap-5 md:grid-cols-2">
+          {articles.map((article) => (
+            <Card key={article.slug}>
+              <div className="mb-3 flex items-center justify-between gap-3">
+                <span className="rounded-full bg-zinc-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-zinc-500">
+                  {article.status}
+                </span>
+              </div>
+              <h2 className="text-2xl font-bold text-zinc-950">{article.title}</h2>
+              <p className="mt-3 leading-7 text-zinc-600">{article.description}</p>
+              {article.status === "Published" ? (
+                <a
+                  href={`/articles/${article.slug}`}
+                  className="mt-5 inline-flex rounded-full bg-zinc-950 px-5 py-2 text-sm font-bold text-white hover:bg-zinc-800"
+                >
+                  Read article
+                </a>
+              ) : (
+                <p className="mt-5 text-sm font-semibold text-zinc-500">Article draft planned.</p>
+              )}
+            </Card>
+          ))}
+        </div>
+      </ContentPage>
+    </>
+  );
+}
+
+function RiskPerTradeArticlePage() {
+  return (
+    <>
+      <PageHero
+        eyebrow="Forex Risk Management"
+        title="What Is Risk per Trade in Forex?"
+        description="Learn what risk per trade means, how to calculate it and why conservative risk settings are important for forex, EA and prop firm traders."
+      />
+      <ContentPage>
+        <article className="space-y-6">
+          <Card>
+            <p className="leading-7 text-zinc-600">
+              Risk per trade is one of the most important concepts in forex trading. It tells you how much of your account you are willing to lose if a single trade hits the stop loss.
+            </p>
+            <p className="mt-4 leading-7 text-zinc-600">
+              Many beginners focus only on profit, entry signals, indicators or Expert Advisors. But before thinking about how much you can make, you should first understand how much you can lose.
+            </p>
+            <div className="mt-5 rounded-2xl bg-zinc-100 p-5 font-semibold text-zinc-950">
+              Risk per trade = the maximum amount you are willing to lose on one trade.
+            </div>
+          </Card>
+
+          <InfoBlock title="Why risk per trade matters">
+            <p>
+              Forex trading involves uncertainty. Even a good strategy can lose several trades in a row. If your risk is too high, a few losing trades can damage your account quickly. If your risk is controlled, you have more time to test, learn and improve.
+            </p>
+            <div className="overflow-auto rounded-2xl border border-zinc-200">
+              <table className="w-full text-left text-sm">
+                <thead className="bg-zinc-100 text-zinc-600">
+                  <tr>
+                    <th className="px-4 py-3">Account Balance</th>
+                    <th className="px-4 py-3">Risk per Trade</th>
+                    <th className="px-4 py-3">Amount at Risk</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-t border-zinc-200">
+                    <td className="px-4 py-3">USD100</td>
+                    <td className="px-4 py-3">1%</td>
+                    <td className="px-4 py-3">USD1</td>
+                  </tr>
+                  <tr className="border-t border-zinc-200">
+                    <td className="px-4 py-3">USD500</td>
+                    <td className="px-4 py-3">1%</td>
+                    <td className="px-4 py-3">USD5</td>
+                  </tr>
+                  <tr className="border-t border-zinc-200">
+                    <td className="px-4 py-3">USD1,000</td>
+                    <td className="px-4 py-3">1%</td>
+                    <td className="px-4 py-3">USD10</td>
+                  </tr>
+                  <tr className="border-t border-zinc-200">
+                    <td className="px-4 py-3">USD10,000</td>
+                    <td className="px-4 py-3">1%</td>
+                    <td className="px-4 py-3">USD100</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </InfoBlock>
+
+          <InfoBlock title="How to calculate risk per trade">
+            <p>The basic formula is:</p>
+            <div className="rounded-2xl bg-zinc-100 p-5 font-semibold text-zinc-950">
+              Account Balance × Risk Percentage = Risk Amount
+            </div>
+            <p>
+              Example: USD500 × 1% = USD5. This means if the trade hits stop loss, the maximum planned loss should be around USD5.
+            </p>
+            <p>
+              Another example: USD300 × 0.5% = USD1.50. This means the trader should set the lot size and stop loss so that the trade does not risk more than USD1.50.
+            </p>
+          </InfoBlock>
+
+          <InfoBlock title="What is a conservative risk per trade?">
+            <p>
+              For beginners, a conservative risk setting is usually lower. A common conservative range is 0.25% to 0.5% per trade. This type of setting is slower, but it can reduce emotional pressure and help protect the account during testing.
+            </p>
+            <div className="overflow-auto rounded-2xl border border-zinc-200">
+              <table className="w-full text-left text-sm">
+                <thead className="bg-zinc-100 text-zinc-600">
+                  <tr>
+                    <th className="px-4 py-3">Account Balance</th>
+                    <th className="px-4 py-3">0.25% Risk</th>
+                    <th className="px-4 py-3">0.5% Risk</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-t border-zinc-200">
+                    <td className="px-4 py-3">USD100</td>
+                    <td className="px-4 py-3">USD0.25</td>
+                    <td className="px-4 py-3">USD0.50</td>
+                  </tr>
+                  <tr className="border-t border-zinc-200">
+                    <td className="px-4 py-3">USD300</td>
+                    <td className="px-4 py-3">USD0.75</td>
+                    <td className="px-4 py-3">USD1.50</td>
+                  </tr>
+                  <tr className="border-t border-zinc-200">
+                    <td className="px-4 py-3">USD500</td>
+                    <td className="px-4 py-3">USD1.25</td>
+                    <td className="px-4 py-3">USD2.50</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </InfoBlock>
+
+          <InfoBlock title="Risk per trade for EA trading">
+            <p>
+              EA trading does not remove risk. In fact, risk control can be even more important when using an Expert Advisor. An EA can open trades automatically based on its rules. If the EA has no proper risk limits, it may continue trading during bad market conditions.
+            </p>
+            <p>A conservative EA setup may include:</p>
+            <ul className="list-disc space-y-2 pl-5">
+              <li>Risk per trade: 0.25% - 0.5%</li>
+              <li>Max daily loss: 2%</li>
+              <li>Max drawdown stop: 10%</li>
+              <li>Max open trades: 1</li>
+              <li>Spread filter, news filter and stop loss protection</li>
+            </ul>
+          </InfoBlock>
+
+          <InfoBlock title="Risk per trade for prop firm challenges">
+            <p>
+              Risk per trade is also important for prop firm challenges. Many prop firms have daily loss limits, maximum overall drawdown rules and consistency requirements. If a trader risks too much per trade, it may be easy to break the daily loss or max loss rule.
+            </p>
+            <p>
+              For example, if a funded challenge has a 5% daily loss limit and a trader risks 2% per trade, only a few losing trades can put the account near violation. A lower risk per trade, such as 0.5% to 1%, may give the trader more room to manage losses.
+            </p>
+          </InfoBlock>
+
+          <InfoBlock title="Common beginner mistakes">
+            <ul className="list-disc space-y-2 pl-5">
+              <li>Risking too much per trade.</li>
+              <li>Using lot size without calculation.</li>
+              <li>Trading without stop loss.</li>
+              <li>Letting an EA run without drawdown protection.</li>
+              <li>Increasing lot size after losses.</li>
+              <li>Using martingale or grid systems without understanding the risk.</li>
+            </ul>
+          </InfoBlock>
+
+          <InfoBlock title="Final thoughts">
+            <p>
+              Risk per trade is not about avoiding all losses. Losses are part of trading. The goal is to make sure that one losing trade, or even several losing trades, does not destroy your account.
+            </p>
+            <div className="rounded-2xl bg-zinc-100 p-5 font-semibold text-zinc-950">
+              Do not ask how much you can make first. Ask how much you can afford to lose first.
+            </div>
+          </InfoBlock>
+
+          <div className="rounded-2xl bg-zinc-950 p-8 text-white">
+            <h2 className="text-2xl font-bold">Want to test EA trading with a conservative setup?</h2>
+            <p className="mt-3 leading-7 text-zinc-300">
+              Get the free Conservative EA Setup Guide and learn the basic risk settings for demo or small capital testing.
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <a href="/#ea-calculator" className="rounded-full bg-white px-6 py-3 text-center text-sm font-bold text-zinc-950 hover:bg-zinc-200">
+                Use EA Calculator
+              </a>
+              <a href={TALLY_URL} target="_blank" rel="noopener noreferrer" className="rounded-full border border-zinc-600 px-6 py-3 text-center text-sm font-bold text-white hover:bg-zinc-900">
+                Get Free Setup Guide
+              </a>
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-zinc-200 bg-white p-6 text-sm leading-7 text-zinc-600">
+            <strong className="text-zinc-950">Risk Disclaimer:</strong> Forex and CFD trading involve risk and may not be suitable for all investors. This article is for educational purposes only and does not provide financial advice, investment advice, trading signals or profit guarantees. Past performance does not guarantee future results. Trade only with money you can afford to lose.
+          </div>
+        </article>
+      </ContentPage>
+    </>
+  );
+}
+
+
 function HomePage() {
   return (
       <main id="top">
@@ -757,6 +990,8 @@ export default function App() {
       "/privacy-policy": "Privacy Policy | SafeTrade Risk Tools",
       "/disclaimer": "Disclaimer | SafeTrade Risk Tools",
       "/contact": "Contact | SafeTrade Risk Tools",
+      "/articles": "Articles | SafeTrade Risk Tools",
+      "/articles/what-is-risk-per-trade-in-forex": "What Is Risk per Trade in Forex? | SafeTrade Risk Tools",
     };
     document.title = titles[path] || "SafeTrade Risk Tools";
   }, [path]);
@@ -767,6 +1002,8 @@ export default function App() {
   else if (path === "/privacy-policy") page = <PrivacyPolicyPage />;
   else if (path === "/disclaimer") page = <DisclaimerPage />;
   else if (path === "/contact") page = <ContactPage />;
+  else if (path === "/articles") page = <ArticlesPage />;
+  else if (path === "/articles/what-is-risk-per-trade-in-forex") page = <RiskPerTradeArticlePage />;
   else if (path !== "/") page = <NotFoundPage />;
 
   return (
@@ -777,6 +1014,7 @@ export default function App() {
         <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-zinc-600 md:flex-row md:items-center md:justify-between">
           <p>© 2026 SafeTrade Risk Tools. Educational content only.</p>
           <nav className="flex flex-wrap gap-4">
+            <a href="/articles" className="hover:text-zinc-950">Articles</a>
             <a href="/about" className="hover:text-zinc-950">About</a>
             <a href="/privacy-policy" className="hover:text-zinc-950">Privacy Policy</a>
             <a href="/disclaimer" className="hover:text-zinc-950">Disclaimer</a>

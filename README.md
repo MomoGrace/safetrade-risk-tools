@@ -149,3 +149,13 @@ It also includes `vercel.json` so direct links such as `/about` work correctly o
 The setup guide button links to:
 
 `https://tally.so/r/81JKpA`
+
+
+## Added Blog / Articles
+
+This version includes:
+
+- `/articles`
+- `/articles/what-is-risk-per-trade-in-forex`
+
+The first published SEO article is: **What Is Risk per Trade in Forex?**
