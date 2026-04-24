@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Replace this URL after connecting your own domain.
+Sitemap: https://example.com/sitemap.xml
