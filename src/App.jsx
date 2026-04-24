@@ -390,7 +390,7 @@ export default function App() {
             <a href="#drawdown" className="hover:text-zinc-950">Drawdown</a>
             <a href="#faq" className="hover:text-zinc-950">FAQ</a>
           </nav>
-          <a href="#lead" className="rounded-full bg-zinc-950 px-5 py-2 text-sm font-semibold text-white hover:bg-zinc-800">Get Setup Guide</a>
+          <a href="https://tally.so/r/81JKpA" className="rounded-full bg-zinc-950 px-5 py-2 text-sm font-semibold text-white hover:bg-zinc-800">Get Setup Guide</a>
         </div>
       </header>
 
@@ -409,7 +409,7 @@ export default function App() {
                 <a href="#ea-calculator" className="rounded-full bg-white px-6 py-3 text-center text-sm font-bold text-zinc-950 hover:bg-zinc-200">
                   Start Calculating
                 </a>
-                <a href="#lead" className="rounded-full border border-zinc-600 px-6 py-3 text-center text-sm font-bold text-white hover:bg-zinc-900">
+                <a href="https://tally.so/r/81JKpA" className="rounded-full border border-zinc-600 px-6 py-3 text-center text-sm font-bold text-white hover:bg-zinc-900">
                   Get Demo Setup Guide
                 </a>
               </div>
