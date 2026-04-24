@@ -403,7 +403,7 @@ function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-zinc-200 bg-white/90 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
-        <a href="/" className="text-lg font-black tracking-tight">SafeTrade Risk Tools</a>
+        <a href="/" className="text-lg font-black tracking-tight">BytesTrade Risk Tools</a>
         <nav className="hidden items-center gap-6 text-sm font-medium text-zinc-600 md:flex">
           <a href="/#ea-calculator" className="hover:text-zinc-950">EA Calculator</a>
           <a href="/#prop-firm" className="hover:text-zinc-950">Prop Firm</a>
@@ -460,12 +460,12 @@ function AboutPage() {
       <PageHero
         eyebrow="About"
         title="Forex, EA and prop firm risk tools for beginners."
-        description="SafeTrade Risk Tools helps traders understand risk before testing an EA, joining a funded account challenge or trading with small capital."
+        description="BytesTrade Risk Tools helps traders understand risk before testing an EA, joining a funded account challenge or trading with small capital."
       />
       <ContentPage>
         <InfoBlock title="What this website does">
           <p>
-            SafeTrade Risk Tools provides simple calculators and educational content for forex traders who want to plan risk more carefully. The tools are designed for conservative EA testing, prop firm daily loss planning, drawdown awareness and small account risk control.
+            BytesTrade Risk Tools provides simple calculators and educational content for forex traders who want to plan risk more carefully. The tools are designed for conservative EA testing, prop firm daily loss planning, drawdown awareness and small account risk control.
           </p>
           <p>
             This website is especially useful for beginners who want to understand numbers such as risk per trade, daily loss limit, maximum drawdown stop and suggested lot size before using automated trading.
@@ -483,7 +483,7 @@ function AboutPage() {
 
         <InfoBlock title="What this website does not do">
           <p>
-            SafeTrade Risk Tools does not provide financial advice, investment advice, trading signals or profit guarantees. The calculators are for education and risk planning only. Forex and CFD trading involve risk, and losses may occur.
+            BytesTrade Risk Tools does not provide financial advice, investment advice, trading signals or profit guarantees. The calculators are for education and risk planning only. Forex and CFD trading involve risk, and losses may occur.
           </p>
         </InfoBlock>
 
@@ -507,7 +507,7 @@ function PrivacyPolicyPage() {
       <PageHero
         eyebrow="Privacy Policy"
         title="Privacy Policy"
-        description="This page explains what information may be collected when you use SafeTrade Risk Tools."
+        description="This page explains what information may be collected when you use BytesTrade Risk Tools."
       />
       <ContentPage>
         <InfoBlock title="Information we collect">
@@ -567,7 +567,7 @@ function DisclaimerPage() {
       <ContentPage>
         <InfoBlock title="Educational purpose only">
           <p>
-            SafeTrade Risk Tools is provided for educational and risk-planning purposes only. The calculators, examples, guides and articles are not financial advice, investment advice, trading advice or a recommendation to buy, sell or trade any financial product.
+            BytesTrade Risk Tools is provided for educational and risk-planning purposes only. The calculators, examples, guides and articles are not financial advice, investment advice, trading advice or a recommendation to buy, sell or trade any financial product.
           </p>
         </InfoBlock>
 
@@ -604,7 +604,7 @@ function ContactPage() {
     <>
       <PageHero
         eyebrow="Contact"
-        title="Contact SafeTrade Risk Tools"
+        title="Contact BytesTrade Risk Tools"
         description="Use the form below to request the conservative EA setup guide or ask about beginner-friendly risk planning."
       />
       <ContentPage>
@@ -1043,7 +1043,7 @@ function ConservativeEASettingsArticlePage() {
           <div className="rounded-2xl bg-zinc-950 p-8 text-white">
             <h2 className="text-2xl font-bold">Want to calculate your conservative EA risk settings?</h2>
             <p className="mt-3 leading-7 text-zinc-300">
-              Use the free SafeTrade EA Calculator or download the Conservative EA Setup Guide for beginners.
+              Use the free BytesTrade EA Calculator or download the Conservative EA Setup Guide for beginners.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a href="/#ea-calculator" className="rounded-full bg-white px-6 py-3 text-center text-sm font-bold text-zinc-950 hover:bg-zinc-200">
@@ -1240,7 +1240,7 @@ function HalfPercentRiskArticlePage() {
           <div className="rounded-2xl bg-zinc-950 p-8 text-white">
             <h2 className="text-2xl font-bold">Want to calculate your EA risk before trading?</h2>
             <p className="mt-3 leading-7 text-zinc-300">
-              Use the free SafeTrade EA Calculator or download the Conservative EA Setup Guide for beginners.
+              Use the free BytesTrade EA Calculator or download the Conservative EA Setup Guide for beginners.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a href="/#ea-calculator" className="rounded-full bg-white px-6 py-3 text-center text-sm font-bold text-zinc-950 hover:bg-zinc-200">
@@ -1767,7 +1767,7 @@ function MartingaleEAArticlePage() {
           <div className="rounded-2xl bg-zinc-950 p-8 text-white">
             <h2 className="text-2xl font-bold">Want to test EA trading with safer risk settings?</h2>
             <p className="mt-3 leading-7 text-zinc-300">
-              Use the free SafeTrade EA Calculator or download the Conservative EA Setup Guide for beginners.
+              Use the free BytesTrade EA Calculator or download the Conservative EA Setup Guide for beginners.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <a href="/#ea-calculator" className="rounded-full bg-white px-6 py-3 text-center text-sm font-bold text-zinc-950 hover:bg-zinc-200">
@@ -1912,19 +1912,19 @@ export default function App() {
 
   useEffect(() => {
     const titles = {
-      "/": "SafeTrade Risk Tools | Forex, EA & Prop Firm Calculators",
-      "/about": "About | SafeTrade Risk Tools",
-      "/privacy-policy": "Privacy Policy | SafeTrade Risk Tools",
-      "/disclaimer": "Disclaimer | SafeTrade Risk Tools",
-      "/contact": "Contact | SafeTrade Risk Tools",
-      "/articles": "Articles | SafeTrade Risk Tools",
-      "/articles/what-is-risk-per-trade-in-forex": "What Is Risk per Trade in Forex? | SafeTrade Risk Tools",
-      "/articles/conservative-ea-settings-for-small-accounts": "Conservative EA Settings for Small Accounts | SafeTrade Risk Tools",
-      "/articles/why-0-5-risk-is-safer-for-ea-beginners": "Why 0.5% Risk Is Safer for EA Beginners | SafeTrade Risk Tools",
-      "/articles/prop-firm-daily-loss-and-max-drawdown-explained": "Prop Firm Daily Loss and Max Drawdown Explained | SafeTrade Risk Tools",
-      "/articles/why-martingale-ea-is-dangerous-for-beginners": "Why Martingale EA Is Dangerous for Beginners | SafeTrade Risk Tools",
+      "/": "BytesTrade Risk Tools | Forex, EA & Prop Firm Calculators",
+      "/about": "About | BytesTrade Risk Tools",
+      "/privacy-policy": "Privacy Policy | BytesTrade Risk Tools",
+      "/disclaimer": "Disclaimer | BytesTrade Risk Tools",
+      "/contact": "Contact | BytesTrade Risk Tools",
+      "/articles": "Articles | BytesTrade Risk Tools",
+      "/articles/what-is-risk-per-trade-in-forex": "What Is Risk per Trade in Forex? | BytesTrade Risk Tools",
+      "/articles/conservative-ea-settings-for-small-accounts": "Conservative EA Settings for Small Accounts | BytesTrade Risk Tools",
+      "/articles/why-0-5-risk-is-safer-for-ea-beginners": "Why 0.5% Risk Is Safer for EA Beginners | BytesTrade Risk Tools",
+      "/articles/prop-firm-daily-loss-and-max-drawdown-explained": "Prop Firm Daily Loss and Max Drawdown Explained | BytesTrade Risk Tools",
+      "/articles/why-martingale-ea-is-dangerous-for-beginners": "Why Martingale EA Is Dangerous for Beginners | BytesTrade Risk Tools",
     };
-    document.title = titles[path] || "SafeTrade Risk Tools";
+    document.title = titles[path] || "BytesTrade Risk Tools";
   }, [path]);
 
   let page = <HomePage />;
@@ -1947,7 +1947,7 @@ export default function App() {
       {page}
       <footer className="border-t border-zinc-200 bg-white px-5 py-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-zinc-600 md:flex-row md:items-center md:justify-between">
-          <p>© 2026 SafeTrade Risk Tools. Educational content only.</p>
+          <p>© 2026 BytesTrade Risk Tools. Educational content only.</p>
           <nav className="flex flex-wrap gap-4">
             <a href="/articles" className="hover:text-zinc-950">Articles</a>
             <a href="/about" className="hover:text-zinc-950">About</a>

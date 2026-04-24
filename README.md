@@ -1,4 +1,4 @@
-# SafeTrade Risk Tools
+# BytesTrade Risk Tools
 
 A beginner-friendly **Forex, EA and Prop Firm Risk Calculator** website.
 
@@ -69,7 +69,7 @@ Or use Git:
 ```bash
 git init
 git add .
-git commit -m "Initial SafeTrade Risk Tools website"
+git commit -m "Initial BytesTrade Risk Tools website"
 git branch -M main
 git remote add origin https://github.com/YOUR_USERNAME/safetrade-risk-tools.git
 git push -u origin main
@@ -187,3 +187,12 @@ This version publishes:
 - `/articles/why-martingale-ea-is-dangerous-for-beginners`
 
 The Articles page now shows the first five articles as Published.
+
+
+## Branding update
+
+This version changes the public brand name to **BytesTrade Risk Tools**.
+
+Recommended domain:
+
+`https://bytestrade.com`

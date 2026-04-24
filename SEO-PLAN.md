@@ -1,4 +1,4 @@
-# SEO Plan for SafeTrade Risk Tools
+# SEO Plan for BytesTrade Risk Tools
 
 ## Main Website Positioning
 

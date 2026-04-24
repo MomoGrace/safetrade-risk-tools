@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://safetrade-risk-tools.vercel.app/sitemap.xml
+Sitemap: https://bytestrade.com/sitemap.xml
