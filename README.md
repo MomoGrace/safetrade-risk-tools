@@ -196,3 +196,10 @@ This version changes the public brand name to **BytesTrade Risk Tools**.
 Recommended domain:
 
 `https://bytestrade.com`
+
+
+## Google Search Console verification
+
+This version adds the Google Search Console verification meta tag to `index.html`:
+
+`uh08Bnw1COFuJbHY3sV15NwZzR_CnAsp_PKaI6VKKUw`
