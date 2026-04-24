@@ -133,3 +133,19 @@ https://wa.me/60123456789?text=Hi%2C%20I%20want%20the%20conservative%20EA%20setu
 ## Risk Disclaimer
 
 Forex and CFD trading involve risk and may not be suitable for all investors. These calculators are for educational and risk-planning purposes only. They do not provide financial advice, trading signals, or profit guarantees. Past performance does not guarantee future results. Trade only with money you can afford to lose.
+
+
+## Added foundation pages
+
+This version includes:
+
+- `/about`
+- `/privacy-policy`
+- `/disclaimer`
+- `/contact`
+
+It also includes `vercel.json` so direct links such as `/about` work correctly on Vercel.
+
+The setup guide button links to:
+
+`https://tally.so/r/81JKpA`

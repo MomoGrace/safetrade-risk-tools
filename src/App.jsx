@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 const modes = {
   conservative: {
@@ -378,22 +378,259 @@ function LeadCapture() {
   );
 }
 
-export default function App() {
-  return (
-    <div className="min-h-screen bg-zinc-50 text-zinc-950">
-      <header className="sticky top-0 z-50 border-b border-zinc-200 bg-white/90 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
-          <a href="#top" className="text-lg font-black tracking-tight">SafeTrade Risk Tools</a>
-          <nav className="hidden items-center gap-6 text-sm font-medium text-zinc-600 md:flex">
-            <a href="#ea-calculator" className="hover:text-zinc-950">EA Calculator</a>
-            <a href="#prop-firm" className="hover:text-zinc-950">Prop Firm</a>
-            <a href="#drawdown" className="hover:text-zinc-950">Drawdown</a>
-            <a href="#faq" className="hover:text-zinc-950">FAQ</a>
-          </nav>
-          <a href="https://tally.so/r/81JKpA" className="rounded-full bg-zinc-950 px-5 py-2 text-sm font-semibold text-white hover:bg-zinc-800">Get Setup Guide</a>
-        </div>
-      </header>
 
+const TALLY_URL = "https://tally.so/r/81JKpA";
+
+function Header() {
+  return (
+    <header className="sticky top-0 z-50 border-b border-zinc-200 bg-white/90 backdrop-blur">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
+        <a href="/" className="text-lg font-black tracking-tight">SafeTrade Risk Tools</a>
+        <nav className="hidden items-center gap-6 text-sm font-medium text-zinc-600 md:flex">
+          <a href="/#ea-calculator" className="hover:text-zinc-950">EA Calculator</a>
+          <a href="/#prop-firm" className="hover:text-zinc-950">Prop Firm</a>
+          <a href="/#drawdown" className="hover:text-zinc-950">Drawdown</a>
+          <a href="/about" className="hover:text-zinc-950">About</a>
+          <a href="/disclaimer" className="hover:text-zinc-950">Disclaimer</a>
+          <a href="/contact" className="hover:text-zinc-950">Contact</a>
+        </nav>
+        <a href={TALLY_URL} target="_blank" rel="noopener noreferrer" className="rounded-full bg-zinc-950 px-5 py-2 text-sm font-semibold text-white hover:bg-zinc-800">
+          Get Setup Guide
+        </a>
+      </div>
+    </header>
+  );
+}
+
+function PageHero({ eyebrow, title, description }) {
+  return (
+    <section className="bg-zinc-950 px-5 py-16 text-white md:py-20">
+      <div className="mx-auto max-w-5xl">
+        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-zinc-400">{eyebrow}</p>
+        <h1 className="max-w-4xl text-4xl font-black tracking-tight md:text-5xl">{title}</h1>
+        <p className="mt-5 max-w-3xl text-lg leading-8 text-zinc-300">{description}</p>
+      </div>
+    </section>
+  );
+}
+
+function ContentPage({ children }) {
+  return (
+    <main>
+      <section className="px-5 py-14">
+        <div className="mx-auto max-w-5xl space-y-6">
+          {children}
+        </div>
+      </section>
+    </main>
+  );
+}
+
+function InfoBlock({ title, children }) {
+  return (
+    <Card>
+      <h2 className="text-2xl font-bold text-zinc-950">{title}</h2>
+      <div className="mt-4 space-y-4 leading-7 text-zinc-600">{children}</div>
+    </Card>
+  );
+}
+
+function AboutPage() {
+  return (
+    <>
+      <PageHero
+        eyebrow="About"
+        title="Forex, EA and prop firm risk tools for beginners."
+        description="SafeTrade Risk Tools helps traders understand risk before testing an EA, joining a funded account challenge or trading with small capital."
+      />
+      <ContentPage>
+        <InfoBlock title="What this website does">
+          <p>
+            SafeTrade Risk Tools provides simple calculators and educational content for forex traders who want to plan risk more carefully. The tools are designed for conservative EA testing, prop firm daily loss planning, drawdown awareness and small account risk control.
+          </p>
+          <p>
+            This website is especially useful for beginners who want to understand numbers such as risk per trade, daily loss limit, maximum drawdown stop and suggested lot size before using automated trading.
+          </p>
+        </InfoBlock>
+
+        <InfoBlock title="Who this website is for">
+          <ul className="list-disc space-y-2 pl-5">
+            <li>Beginners who want to test EA trading with demo or small capital first.</li>
+            <li>Traders who want to calculate risk before placing trades.</li>
+            <li>Prop firm challenge users who want to understand daily loss and max loss limits.</li>
+            <li>Anyone who wants a more conservative way to think about automated trading risk.</li>
+          </ul>
+        </InfoBlock>
+
+        <InfoBlock title="What this website does not do">
+          <p>
+            SafeTrade Risk Tools does not provide financial advice, investment advice, trading signals or profit guarantees. The calculators are for education and risk planning only. Forex and CFD trading involve risk, and losses may occur.
+          </p>
+        </InfoBlock>
+
+        <div className="rounded-2xl bg-zinc-950 p-8 text-white">
+          <h2 className="text-2xl font-bold">Want the conservative EA setup guide?</h2>
+          <p className="mt-3 leading-7 text-zinc-300">
+            Get the free setup guide for conservative EA demo testing and small capital risk planning.
+          </p>
+          <a href={TALLY_URL} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex rounded-full bg-white px-6 py-3 text-sm font-bold text-zinc-950 hover:bg-zinc-200">
+            Get Free Setup Guide
+          </a>
+        </div>
+      </ContentPage>
+    </>
+  );
+}
+
+function PrivacyPolicyPage() {
+  return (
+    <>
+      <PageHero
+        eyebrow="Privacy Policy"
+        title="Privacy Policy"
+        description="This page explains what information may be collected when you use SafeTrade Risk Tools."
+      />
+      <ContentPage>
+        <InfoBlock title="Information we collect">
+          <p>
+            When you use our calculators, the numbers you enter are processed in your browser to show the result. We do not require an account to use the calculators.
+          </p>
+          <p>
+            If you submit the setup guide form, we may collect the information you provide, such as your name, email address, WhatsApp number, country, trading experience and selected interest. This information is used to respond to your request and provide the guide or related follow-up.
+          </p>
+        </InfoBlock>
+
+        <InfoBlock title="How information is stored">
+          <p>
+            Form submissions may be processed through third-party services such as Tally and Google Sheets. These tools help us receive and organize your request. Please review the privacy policies of those services if you want to understand how they handle data.
+          </p>
+        </InfoBlock>
+
+        <InfoBlock title="Cookies, analytics and advertising">
+          <p>
+            This website may use basic cookies, analytics tools or advertising technologies in the future to understand website traffic, improve user experience and support free content. If Google AdSense or similar ad services are added, third-party vendors may use cookies to serve relevant ads.
+          </p>
+        </InfoBlock>
+
+        <InfoBlock title="How we use your information">
+          <ul className="list-disc space-y-2 pl-5">
+            <li>To send or provide access to the requested EA setup guide.</li>
+            <li>To respond to your questions or requests.</li>
+            <li>To improve the website, calculators and educational content.</li>
+            <li>To keep a record of form submissions and user interest.</li>
+          </ul>
+        </InfoBlock>
+
+        <InfoBlock title="Your choice">
+          <p>
+            You can choose not to submit the form if you do not want to provide personal information. If you want your submitted information removed, please contact us through the contact page.
+          </p>
+        </InfoBlock>
+
+        <InfoBlock title="Important note">
+          <p>
+            This privacy policy is a general template for this early website version and is not legal advice. If you plan to run paid ads, affiliate offers, AdSense or collect more user data, you should review this policy with a qualified professional.
+          </p>
+        </InfoBlock>
+      </ContentPage>
+    </>
+  );
+}
+
+function DisclaimerPage() {
+  return (
+    <>
+      <PageHero
+        eyebrow="Disclaimer"
+        title="Risk Disclaimer"
+        description="Please read this page before using the calculators, guides or any EA-related content on this website."
+      />
+      <ContentPage>
+        <InfoBlock title="Educational purpose only">
+          <p>
+            SafeTrade Risk Tools is provided for educational and risk-planning purposes only. The calculators, examples, guides and articles are not financial advice, investment advice, trading advice or a recommendation to buy, sell or trade any financial product.
+          </p>
+        </InfoBlock>
+
+        <InfoBlock title="Forex and CFD trading risk">
+          <p>
+            Forex, CFD and leveraged trading involve significant risk. You can lose part or all of your capital. Automated trading systems, including Expert Advisors, can also lose money during poor market conditions, high spread, slippage, news events or unexpected volatility.
+          </p>
+        </InfoBlock>
+
+        <InfoBlock title="No profit guarantee">
+          <p>
+            This website does not guarantee profit, fixed monthly returns, capital protection, low drawdown or successful funded account results. Past performance, backtests, demo results or calculator examples do not guarantee future results.
+          </p>
+        </InfoBlock>
+
+        <InfoBlock title="EA and automated trading">
+          <p>
+            Any EA setup, risk setting or calculator result should be tested carefully on demo first. Always consider broker conditions, spread, commission, swap, slippage, minimum lot size, account type and your personal risk tolerance.
+          </p>
+        </InfoBlock>
+
+        <InfoBlock title="Use at your own risk">
+          <p>
+            You are responsible for your own trading decisions. Do not trade with money you cannot afford to lose. If you are unsure, seek advice from a licensed financial professional in your jurisdiction.
+          </p>
+        </InfoBlock>
+      </ContentPage>
+    </>
+  );
+}
+
+function ContactPage() {
+  return (
+    <>
+      <PageHero
+        eyebrow="Contact"
+        title="Contact SafeTrade Risk Tools"
+        description="Use the form below to request the conservative EA setup guide or ask about beginner-friendly risk planning."
+      />
+      <ContentPage>
+        <div className="grid gap-6 md:grid-cols-[1fr_0.85fr]">
+          <InfoBlock title="Get the setup guide">
+            <p>
+              The fastest way to contact us is through the setup guide form. Your submission will be saved and we will follow up when possible.
+            </p>
+            <a href={TALLY_URL} target="_blank" rel="noopener noreferrer" className="inline-flex rounded-full bg-zinc-950 px-6 py-3 text-sm font-bold text-white hover:bg-zinc-800">
+              Open Contact Form
+            </a>
+          </InfoBlock>
+
+          <InfoBlock title="Before contacting us">
+            <ul className="list-disc space-y-2 pl-5">
+              <li>This website does not provide guaranteed-profit EA claims.</li>
+              <li>We focus on demo testing, conservative settings and risk awareness.</li>
+              <li>Forex trading involves risk. Please only use money you can afford to lose.</li>
+            </ul>
+          </InfoBlock>
+        </div>
+      </ContentPage>
+    </>
+  );
+}
+
+function NotFoundPage() {
+  return (
+    <>
+      <PageHero
+        eyebrow="404"
+        title="Page not found"
+        description="The page you are looking for does not exist."
+      />
+      <ContentPage>
+        <Card>
+          <a href="/" className="font-semibold text-zinc-950 underline">Return to homepage</a>
+        </Card>
+      </ContentPage>
+    </>
+  );
+}
+
+function HomePage() {
+  return (
       <main id="top">
         <section className="bg-zinc-950 px-5 py-20 text-white md:py-28">
           <div className="mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-[1.1fr_0.9fr]">
@@ -409,7 +646,7 @@ export default function App() {
                 <a href="#ea-calculator" className="rounded-full bg-white px-6 py-3 text-center text-sm font-bold text-zinc-950 hover:bg-zinc-200">
                   Start Calculating
                 </a>
-                <a href="https://tally.so/r/81JKpA" className="rounded-full border border-zinc-600 px-6 py-3 text-center text-sm font-bold text-white hover:bg-zinc-900">
+                <a href="https://tally.so/r/81JKpA" target="_blank" rel="noopener noreferrer" className="rounded-full border border-zinc-600 px-6 py-3 text-center text-sm font-bold text-white hover:bg-zinc-900">
                   Get Demo Setup Guide
                 </a>
               </div>
@@ -507,6 +744,46 @@ export default function App() {
           </div>
         </section>
       </main>
+  );
+}
+
+export default function App() {
+  const path = window.location.pathname;
+
+  useEffect(() => {
+    const titles = {
+      "/": "SafeTrade Risk Tools | Forex, EA & Prop Firm Calculators",
+      "/about": "About | SafeTrade Risk Tools",
+      "/privacy-policy": "Privacy Policy | SafeTrade Risk Tools",
+      "/disclaimer": "Disclaimer | SafeTrade Risk Tools",
+      "/contact": "Contact | SafeTrade Risk Tools",
+    };
+    document.title = titles[path] || "SafeTrade Risk Tools";
+  }, [path]);
+
+  let page = <HomePage />;
+
+  if (path === "/about") page = <AboutPage />;
+  else if (path === "/privacy-policy") page = <PrivacyPolicyPage />;
+  else if (path === "/disclaimer") page = <DisclaimerPage />;
+  else if (path === "/contact") page = <ContactPage />;
+  else if (path !== "/") page = <NotFoundPage />;
+
+  return (
+    <div className="min-h-screen bg-zinc-50 text-zinc-950">
+      <Header />
+      {page}
+      <footer className="border-t border-zinc-200 bg-white px-5 py-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-zinc-600 md:flex-row md:items-center md:justify-between">
+          <p>© 2026 SafeTrade Risk Tools. Educational content only.</p>
+          <nav className="flex flex-wrap gap-4">
+            <a href="/about" className="hover:text-zinc-950">About</a>
+            <a href="/privacy-policy" className="hover:text-zinc-950">Privacy Policy</a>
+            <a href="/disclaimer" className="hover:text-zinc-950">Disclaimer</a>
+            <a href="/contact" className="hover:text-zinc-950">Contact</a>
+          </nav>
+        </div>
+      </footer>
     </div>
   );
 }

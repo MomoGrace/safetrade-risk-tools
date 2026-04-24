@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Replace this URL after connecting your own domain.
-Sitemap: https://example.com/sitemap.xml
+Sitemap: https://safetrade-risk-tools.vercel.app/sitemap.xml
