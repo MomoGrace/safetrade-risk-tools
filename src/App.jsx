@@ -56,7 +56,7 @@ const articles = [
     title: "Prop Firm Daily Loss and Max Drawdown Explained",
     slug: "prop-firm-daily-loss-and-max-drawdown-explained",
     description: "Learn the difference between daily loss limit and maximum drawdown when trading funded account challenges.",
-    status: "Coming soon",
+    status: "Published",
   },
   {
     title: "Why Martingale EA Is Dangerous for Beginners",
@@ -1262,6 +1262,262 @@ function HalfPercentRiskArticlePage() {
 }
 
 
+
+function PropFirmDailyLossArticlePage() {
+  return (
+    <>
+      <PageHero
+        eyebrow="Prop Firm Risk Management"
+        title="Prop Firm Daily Loss and Max Drawdown Explained"
+        description="Understand the difference between daily loss limit and maximum drawdown, and learn how to plan risk before taking a funded account challenge."
+      />
+      <ContentPage>
+        <article className="space-y-6">
+          <Card>
+            <p className="leading-7 text-zinc-600">
+              Prop firm challenges can look attractive because traders can access a larger simulated or funded account without depositing the full account size. But the account size is only one part of the story. The most important part is understanding the risk rules.
+            </p>
+            <p className="mt-4 leading-7 text-zinc-600">
+              Two of the most important rules are usually called daily loss limit and maximum drawdown. These rules are designed to control how much the account can lose in a day and how much it can lose overall.
+            </p>
+            <p className="mt-4 leading-7 text-zinc-600">
+              If a trader does not understand these rules, one bad trading day can violate the challenge even before the strategy has enough time to prove itself.
+            </p>
+          </Card>
+
+          <InfoBlock title="What is a daily loss limit?">
+            <p>
+              A daily loss limit is the maximum amount your account is allowed to lose within one trading day. In many prop firm programs, this can include both closed losses and floating losses from open trades.
+            </p>
+            <p>
+              For example, if a USD10,000 challenge has a 5% daily loss limit, the daily loss amount may be USD500. If your account equity drops below the allowed daily limit, the account may violate the rule.
+            </p>
+            <div className="rounded-2xl bg-zinc-100 p-5 text-zinc-700">
+              <p><strong>Example:</strong> USD10,000 account</p>
+              <p><strong>Daily loss limit:</strong> 5%</p>
+              <p><strong>Maximum allowed daily loss:</strong> USD500</p>
+            </div>
+            <p>
+              Always check the official rules of the prop firm you are using. Some firms calculate daily loss from the starting balance of the day, while others may use starting equity, previous day balance, or another rule.
+            </p>
+          </InfoBlock>
+
+          <InfoBlock title="What is maximum drawdown or maximum loss?">
+            <p>
+              Maximum drawdown, also called maximum loss, is the total loss limit for the account. It is usually larger than the daily loss limit, but it applies across the full challenge or funded account period.
+            </p>
+            <p>
+              For example, if a USD10,000 account has a 10% maximum loss rule, the account may not be allowed to drop below USD9,000 equity or balance depending on the firm’s rule.
+            </p>
+            <div className="rounded-2xl bg-zinc-100 p-5 text-zinc-700">
+              <p><strong>Example:</strong> USD10,000 account</p>
+              <p><strong>Maximum loss:</strong> 10%</p>
+              <p><strong>Maximum allowed total loss:</strong> USD1,000</p>
+              <p><strong>Possible account stop level:</strong> USD9,000</p>
+            </div>
+          </InfoBlock>
+
+          <InfoBlock title="Daily loss vs maximum drawdown">
+            <p>
+              The daily loss limit controls one trading day. The maximum drawdown controls the full account. A trader must respect both at the same time.
+            </p>
+            <div className="overflow-auto rounded-2xl border border-zinc-200">
+              <table className="w-full text-left text-sm">
+                <thead className="bg-zinc-100 text-zinc-600">
+                  <tr>
+                    <th className="px-4 py-3">Rule</th>
+                    <th className="px-4 py-3">Meaning</th>
+                    <th className="px-4 py-3">Example on USD10,000</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-t border-zinc-200">
+                    <td className="px-4 py-3 font-semibold">Daily loss limit</td>
+                    <td className="px-4 py-3">Maximum loss allowed in one trading day</td>
+                    <td className="px-4 py-3">5% = USD500</td>
+                  </tr>
+                  <tr className="border-t border-zinc-200">
+                    <td className="px-4 py-3 font-semibold">Maximum drawdown</td>
+                    <td className="px-4 py-3">Maximum total loss allowed on the account</td>
+                    <td className="px-4 py-3">10% = USD1,000</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              A trader can violate the daily loss limit even if the maximum drawdown is not reached. A trader can also violate the maximum drawdown even if the daily loss limit is not broken on that specific day.
+            </p>
+          </InfoBlock>
+
+          <InfoBlock title="Why prop firm traders must calculate risk before trading">
+            <p>
+              Many traders fail challenges not because every trade is bad, but because the risk per trade is too large compared with the allowed loss limits.
+            </p>
+            <p>
+              If a trader risks 2% per trade on an account with a 5% daily loss limit, only a few losing trades can put the account near violation. If the trader risks 0.5% to 1% per trade, there is more room to manage losses.
+            </p>
+            <div className="overflow-auto rounded-2xl border border-zinc-200">
+              <table className="w-full text-left text-sm">
+                <thead className="bg-zinc-100 text-zinc-600">
+                  <tr>
+                    <th className="px-4 py-3">Risk per Trade</th>
+                    <th className="px-4 py-3">Loss Amount on USD10,000</th>
+                    <th className="px-4 py-3">Losing Trades Before USD500 Daily Limit</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-t border-zinc-200">
+                    <td className="px-4 py-3">0.5%</td>
+                    <td className="px-4 py-3">USD50</td>
+                    <td className="px-4 py-3">About 10 trades</td>
+                  </tr>
+                  <tr className="border-t border-zinc-200">
+                    <td className="px-4 py-3">1%</td>
+                    <td className="px-4 py-3">USD100</td>
+                    <td className="px-4 py-3">About 5 trades</td>
+                  </tr>
+                  <tr className="border-t border-zinc-200">
+                    <td className="px-4 py-3">2%</td>
+                    <td className="px-4 py-3">USD200</td>
+                    <td className="px-4 py-3">About 2 trades</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              These are simple examples. Real results can be affected by spread, slippage, commissions, swaps and floating losses.
+            </p>
+          </InfoBlock>
+
+          <InfoBlock title="Example: USD10,000 prop firm challenge">
+            <p>Here is a simple planning example:</p>
+            <div className="rounded-2xl bg-zinc-100 p-5 text-zinc-700">
+              <p><strong>Account size:</strong> USD10,000</p>
+              <p><strong>Daily loss limit:</strong> 5% = USD500</p>
+              <p><strong>Maximum drawdown:</strong> 10% = USD1,000</p>
+              <p><strong>Conservative risk per trade:</strong> 0.5% = USD50</p>
+              <p><strong>Max suggested trades per day:</strong> 2 - 4 losing trades before stopping manually</p>
+            </div>
+            <p>
+              A conservative trader may choose to stop for the day after losing 2% to 3%, even if the official daily limit is 5%. This creates a safety buffer and reduces the chance of accidental violation.
+            </p>
+          </InfoBlock>
+
+          <InfoBlock title="Why a safety buffer matters">
+            <p>
+              Some traders trade until they are very close to the daily loss limit. This is risky. Spread, slippage or a floating loss can push the account past the limit.
+            </p>
+            <p>
+              A safety buffer means stopping before the official limit. For example, if the official daily loss is 5%, a trader may set a personal stop at 2% or 3%.
+            </p>
+            <div className="overflow-auto rounded-2xl border border-zinc-200">
+              <table className="w-full text-left text-sm">
+                <thead className="bg-zinc-100 text-zinc-600">
+                  <tr>
+                    <th className="px-4 py-3">Official Limit</th>
+                    <th className="px-4 py-3">Personal Stop</th>
+                    <th className="px-4 py-3">Reason</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-t border-zinc-200">
+                    <td className="px-4 py-3">5% daily loss</td>
+                    <td className="px-4 py-3">2% - 3%</td>
+                    <td className="px-4 py-3">Avoid getting too close to violation</td>
+                  </tr>
+                  <tr className="border-t border-zinc-200">
+                    <td className="px-4 py-3">10% max drawdown</td>
+                    <td className="px-4 py-3">6% - 8%</td>
+                    <td className="px-4 py-3">Pause and review before deeper drawdown</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </InfoBlock>
+
+          <InfoBlock title="Common daily loss mistakes">
+            <ul className="list-disc space-y-2 pl-5">
+              <li>Only checking closed trades and ignoring floating loss.</li>
+              <li>Opening too many trades at the same time.</li>
+              <li>Trading during news without understanding volatility.</li>
+              <li>Increasing lot size after losses.</li>
+              <li>Thinking the daily loss limit is the amount you should use every day.</li>
+              <li>Not knowing when the prop firm resets the daily calculation.</li>
+            </ul>
+          </InfoBlock>
+
+          <InfoBlock title="Common maximum drawdown mistakes">
+            <ul className="list-disc space-y-2 pl-5">
+              <li>Confusing daily loss with total max loss.</li>
+              <li>Assuming profit always increases the drawdown limit.</li>
+              <li>Not checking whether the firm uses balance, equity or trailing drawdown.</li>
+              <li>Using one large trade that risks too much of the account.</li>
+              <li>Letting an EA run without an equity stop.</li>
+            </ul>
+          </InfoBlock>
+
+          <InfoBlock title="How EA traders should handle prop firm limits">
+            <p>
+              EA traders must be extra careful with prop firm rules because the EA can continue opening trades automatically. Before running an EA on a challenge, check whether the EA can control risk properly.
+            </p>
+            <p>A safer EA setup for prop firm testing may include:</p>
+            <ul className="list-disc space-y-2 pl-5">
+              <li>Risk per trade: 0.25% - 0.5% for conservative testing.</li>
+              <li>Max daily loss: lower than the official daily limit.</li>
+              <li>Max drawdown stop: lower than the official maximum loss.</li>
+              <li>Max open trades: limited.</li>
+              <li>No martingale or unlimited grid.</li>
+              <li>Spread filter and news filter.</li>
+            </ul>
+          </InfoBlock>
+
+          <InfoBlock title="Simple prop firm risk checklist">
+            <ul className="list-disc space-y-2 pl-5">
+              <li>Do you know the daily loss limit?</li>
+              <li>Do you know whether floating loss counts?</li>
+              <li>Do you know the maximum drawdown rule?</li>
+              <li>Do you know the reset time for daily loss?</li>
+              <li>Do you have a personal stop before the official limit?</li>
+              <li>Do you know your risk amount per trade?</li>
+              <li>Do you limit open trades?</li>
+              <li>Does your EA have an equity stop?</li>
+            </ul>
+          </InfoBlock>
+
+          <InfoBlock title="Final thoughts">
+            <p>
+              Prop firm trading is not only about reaching the profit target. It is also about staying within the rules long enough to complete the challenge. Daily loss and maximum drawdown are two rules every trader should understand before placing the first trade.
+            </p>
+            <div className="rounded-2xl bg-zinc-100 p-5 font-semibold text-zinc-950">
+              A good prop firm trader does not only plan profit. A good prop firm trader plans the maximum acceptable loss first.
+            </div>
+          </InfoBlock>
+
+          <div className="rounded-2xl bg-zinc-950 p-8 text-white">
+            <h2 className="text-2xl font-bold">Want to calculate your prop firm risk?</h2>
+            <p className="mt-3 leading-7 text-zinc-300">
+              Use the free Prop Firm Risk Calculator or download the Conservative EA Setup Guide for beginners.
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <a href="/#prop-firm" className="rounded-full bg-white px-6 py-3 text-center text-sm font-bold text-zinc-950 hover:bg-zinc-200">
+                Use Prop Firm Calculator
+              </a>
+              <a href={TALLY_URL} target="_blank" rel="noopener noreferrer" className="rounded-full border border-zinc-600 px-6 py-3 text-center text-sm font-bold text-white hover:bg-zinc-900">
+                Get Free Setup Guide
+              </a>
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-zinc-200 bg-white p-6 text-sm leading-7 text-zinc-600">
+            <strong className="text-zinc-950">Risk Disclaimer:</strong> Prop firm rules vary by company and can change. Always read the official rules of the prop firm you use. This article is for educational and risk-planning purposes only. It does not provide financial advice, investment advice, trading signals or profit guarantees. Forex and CFD trading involve risk. Past performance does not guarantee future results.
+          </div>
+        </article>
+      </ContentPage>
+    </>
+  );
+}
+
+
 function HomePage() {
   return (
       <main id="top">
@@ -1394,6 +1650,7 @@ export default function App() {
       "/articles/what-is-risk-per-trade-in-forex": "What Is Risk per Trade in Forex? | SafeTrade Risk Tools",
       "/articles/conservative-ea-settings-for-small-accounts": "Conservative EA Settings for Small Accounts | SafeTrade Risk Tools",
       "/articles/why-0-5-risk-is-safer-for-ea-beginners": "Why 0.5% Risk Is Safer for EA Beginners | SafeTrade Risk Tools",
+      "/articles/prop-firm-daily-loss-and-max-drawdown-explained": "Prop Firm Daily Loss and Max Drawdown Explained | SafeTrade Risk Tools",
     };
     document.title = titles[path] || "SafeTrade Risk Tools";
   }, [path]);
@@ -1408,6 +1665,7 @@ export default function App() {
   else if (path === "/articles/what-is-risk-per-trade-in-forex") page = <RiskPerTradeArticlePage />;
   else if (path === "/articles/conservative-ea-settings-for-small-accounts") page = <ConservativeEASettingsArticlePage />;
   else if (path === "/articles/why-0-5-risk-is-safer-for-ea-beginners") page = <HalfPercentRiskArticlePage />;
+  else if (path === "/articles/prop-firm-daily-loss-and-max-drawdown-explained") page = <PropFirmDailyLossArticlePage />;
   else if (path !== "/") page = <NotFoundPage />;
 
   return (

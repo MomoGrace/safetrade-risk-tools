@@ -169,3 +169,12 @@ This version publishes:
 - `/articles/why-0-5-risk-is-safer-for-ea-beginners`
 
 The Articles page now shows the first three articles as Published.
+
+
+## Added fourth SEO article
+
+This version publishes:
+
+- `/articles/prop-firm-daily-loss-and-max-drawdown-explained`
+
+The Articles page now shows the first four articles as Published.
