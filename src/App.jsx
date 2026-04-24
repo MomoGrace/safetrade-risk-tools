@@ -408,7 +408,9 @@ function Header() {
           <a href="/#ea-calculator" className="hover:text-zinc-950">EA Calculator</a>
           <a href="/#prop-firm" className="hover:text-zinc-950">Prop Firm</a>
           <a href="/#drawdown" className="hover:text-zinc-950">Drawdown</a>
-          <a href="/articles" className="hover:text-zinc-950">Articles</a>
+          <a href="/forex-market-hours" className="hover:text-zinc-950">Market Hours</a>
+          <a href="/forex-market-hours" className="hover:text-zinc-950">Market Hours</a>
+            <a href="/articles" className="hover:text-zinc-950">Articles</a>
             <a href="/about" className="hover:text-zinc-950">About</a>
           <a href="/disclaimer" className="hover:text-zinc-950">Disclaimer</a>
           <a href="/contact" className="hover:text-zinc-950">Contact</a>
@@ -1789,6 +1791,185 @@ function MartingaleEAArticlePage() {
 }
 
 
+
+function ForexMarketHoursPage() {
+  const sessions = [
+    {
+      name: "Sydney Session",
+      local: "Approx. 5:00 AM - 2:00 PM Malaysia Time",
+      focus: "Early Asia-Pacific movement",
+      note: "Usually quieter than London and New York. Spreads can be wider at the start of the trading week.",
+    },
+    {
+      name: "Tokyo Session",
+      local: "Approx. 7:00 AM - 4:00 PM Malaysia Time",
+      focus: "Asia session liquidity",
+      note: "Often watched for JPY pairs and early Asian market direction.",
+    },
+    {
+      name: "London Session",
+      local: "Approx. 3:00 PM - 12:00 AM Malaysia Time",
+      focus: "High liquidity and volatility",
+      note: "One of the most active sessions. Many traders watch EUR, GBP and USD pairs during this time.",
+    },
+    {
+      name: "New York Session",
+      local: "Approx. 8:00 PM - 5:00 AM Malaysia Time",
+      focus: "US session movement",
+      note: "Often active during US news releases and London-New York overlap.",
+    },
+  ];
+
+  return (
+    <>
+      <PageHero
+        eyebrow="Forex Market Hours"
+        title="Forex Market Hours & Trading Session Clock"
+        description="A beginner-friendly guide to forex market sessions, Malaysia time reference, EA trading time reminders and session risk planning."
+      />
+      <ContentPage>
+        <div className="grid gap-6 md:grid-cols-[1fr_0.85fr]">
+          <Card>
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-zinc-500">Malaysia Time Reference</p>
+            <h2 className="mt-3 text-3xl font-black tracking-tight text-zinc-950">Plan your trades around market sessions.</h2>
+            <p className="mt-4 leading-7 text-zinc-600">
+              The forex market is commonly described as a 24-hour market during weekdays because trading activity moves across major financial centers such as Sydney, Tokyo, London and New York.
+            </p>
+            <p className="mt-4 leading-7 text-zinc-600">
+              The times below are approximate Malaysia Time references. Actual trading conditions may vary because of daylight saving time, broker server time, holidays, liquidity and news events.
+            </p>
+          </Card>
+
+          <Card className="bg-zinc-950 text-white">
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-zinc-400">Important Reminder</p>
+            <h2 className="mt-3 text-2xl font-bold">Session time is not a profit signal.</h2>
+            <p className="mt-4 leading-7 text-zinc-300">
+              A market session can show when liquidity may be higher, but it does not guarantee direction, profit or lower risk. Always use risk control, especially when testing an EA.
+            </p>
+            <a href="/#ea-calculator" className="mt-6 inline-flex rounded-full bg-white px-6 py-3 text-sm font-bold text-zinc-950 hover:bg-zinc-200">
+              Use EA Risk Calculator
+            </a>
+          </Card>
+        </div>
+
+        <InfoBlock title="Forex session times in Malaysia">
+          <p>
+            These session times are simplified references for traders in Malaysia. Because daylight saving time changes in some countries, session overlap can shift during the year.
+          </p>
+          <div className="grid gap-4 md:grid-cols-2">
+            {sessions.map((session) => (
+              <div key={session.name} className="rounded-2xl border border-zinc-200 bg-zinc-50 p-5">
+                <h3 className="text-xl font-bold text-zinc-950">{session.name}</h3>
+                <p className="mt-2 font-semibold text-zinc-700">{session.local}</p>
+                <p className="mt-3 text-sm font-semibold uppercase tracking-[0.15em] text-zinc-500">{session.focus}</p>
+                <p className="mt-3 leading-7 text-zinc-600">{session.note}</p>
+              </div>
+            ))}
+          </div>
+        </InfoBlock>
+
+        <InfoBlock title="Best session for EA testing">
+          <p>
+            There is no single best session for every EA. Different strategies behave differently. A breakout EA may prefer high liquidity periods, while a low-volatility strategy may prefer quieter periods.
+          </p>
+          <p>
+            For beginners, the most important step is to test the EA on demo first and record how it behaves in each session.
+          </p>
+          <div className="overflow-auto rounded-2xl border border-zinc-200">
+            <table className="w-full text-left text-sm">
+              <thead className="bg-zinc-100 text-zinc-600">
+                <tr>
+                  <th className="px-4 py-3">Session</th>
+                  <th className="px-4 py-3">Common Characteristic</th>
+                  <th className="px-4 py-3">EA Testing Reminder</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t border-zinc-200">
+                  <td className="px-4 py-3 font-semibold">Asian Session</td>
+                  <td className="px-4 py-3">Often calmer than London/New York</td>
+                  <td className="px-4 py-3">Watch spread and low-liquidity conditions</td>
+                </tr>
+                <tr className="border-t border-zinc-200">
+                  <td className="px-4 py-3 font-semibold">London Session</td>
+                  <td className="px-4 py-3">Often high activity</td>
+                  <td className="px-4 py-3">Check volatility and breakout behavior</td>
+                </tr>
+                <tr className="border-t border-zinc-200">
+                  <td className="px-4 py-3 font-semibold">New York Session</td>
+                  <td className="px-4 py-3">Often affected by US news</td>
+                  <td className="px-4 py-3">Use news filter and risk limits</td>
+                </tr>
+                <tr className="border-t border-zinc-200">
+                  <td className="px-4 py-3 font-semibold">London-New York Overlap</td>
+                  <td className="px-4 py-3">Often high liquidity and movement</td>
+                  <td className="px-4 py-3">Good for testing, but risk can increase</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </InfoBlock>
+
+        <InfoBlock title="Forex market hours and risk management">
+          <p>
+            Time matters because spread, volatility and liquidity can change across the day. An EA that performs normally during one session may behave differently during another session.
+          </p>
+          <p>Before running an EA, consider:</p>
+          <ul className="list-disc space-y-2 pl-5">
+            <li>Does the EA have a trading hour filter?</li>
+            <li>Does the EA avoid high-impact news?</li>
+            <li>Does the EA stop after a daily loss limit?</li>
+            <li>Does the EA have a maximum drawdown stop?</li>
+            <li>Does the broker spread widen during rollover or quiet hours?</li>
+            <li>Does your strategy work better in trend or range conditions?</li>
+          </ul>
+        </InfoBlock>
+
+        <InfoBlock title="Malaysia trader example">
+          <p>
+            A trader in Malaysia may observe that the London session starts in the afternoon, while the New York session becomes active at night. This means a working adult may see more market movement after office hours, but it also means risk can increase during major US news.
+          </p>
+          <p>
+            For conservative EA testing, a trader may choose to run the EA only during selected sessions and avoid rollover time, high spread conditions and major news events.
+          </p>
+        </InfoBlock>
+
+        <InfoBlock title="Simple EA market-hours checklist">
+          <ul className="list-disc space-y-2 pl-5">
+            <li>Test the EA on demo before using real capital.</li>
+            <li>Record performance by session: Asian, London and New York.</li>
+            <li>Avoid high-impact news unless the strategy is designed for news trading.</li>
+            <li>Use a spread filter.</li>
+            <li>Use a daily loss limit.</li>
+            <li>Use a maximum drawdown stop.</li>
+            <li>Do not assume one profitable session means the EA is safe.</li>
+          </ul>
+        </InfoBlock>
+
+        <div className="rounded-2xl bg-zinc-950 p-8 text-white">
+          <h2 className="text-2xl font-bold">Want to combine market timing with risk control?</h2>
+          <p className="mt-3 leading-7 text-zinc-300">
+            Use the EA Risk Calculator first, then download the free Conservative EA Setup Guide for beginner-friendly risk planning.
+          </p>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <a href="/#ea-calculator" className="rounded-full bg-white px-6 py-3 text-center text-sm font-bold text-zinc-950 hover:bg-zinc-200">
+              Use EA Calculator
+            </a>
+            <a href={TALLY_URL} target="_blank" rel="noopener noreferrer" className="rounded-full border border-zinc-600 px-6 py-3 text-center text-sm font-bold text-white hover:bg-zinc-900">
+              Get Free Setup Guide
+            </a>
+          </div>
+        </div>
+
+        <div className="rounded-2xl border border-zinc-200 bg-white p-6 text-sm leading-7 text-zinc-600">
+          <strong className="text-zinc-950">Risk Disclaimer:</strong> Session times are approximate and may change due to daylight saving time, holidays, broker server time and market conditions. Forex and CFD trading involve risk. This page is for educational and planning purposes only and does not provide financial advice, trading signals or profit guarantees.
+        </div>
+      </ContentPage>
+    </>
+  );
+}
+
+
 function HomePage() {
   return (
       <main id="top">
@@ -1917,6 +2098,7 @@ export default function App() {
       "/privacy-policy": "Privacy Policy | BytesTrade Risk Tools",
       "/disclaimer": "Disclaimer | BytesTrade Risk Tools",
       "/contact": "Contact | BytesTrade Risk Tools",
+      "/forex-market-hours": "Forex Market Hours & Trading Session Clock | BytesTrade Risk Tools",
       "/articles": "Articles | BytesTrade Risk Tools",
       "/articles/what-is-risk-per-trade-in-forex": "What Is Risk per Trade in Forex? | BytesTrade Risk Tools",
       "/articles/conservative-ea-settings-for-small-accounts": "Conservative EA Settings for Small Accounts | BytesTrade Risk Tools",
@@ -1933,6 +2115,7 @@ export default function App() {
   else if (path === "/privacy-policy") page = <PrivacyPolicyPage />;
   else if (path === "/disclaimer") page = <DisclaimerPage />;
   else if (path === "/contact") page = <ContactPage />;
+  else if (path === "/forex-market-hours") page = <ForexMarketHoursPage />;
   else if (path === "/articles") page = <ArticlesPage />;
   else if (path === "/articles/what-is-risk-per-trade-in-forex") page = <RiskPerTradeArticlePage />;
   else if (path === "/articles/conservative-ea-settings-for-small-accounts") page = <ConservativeEASettingsArticlePage />;

@@ -203,3 +203,12 @@ Recommended domain:
 This version adds the Google Search Console verification meta tag to `index.html`:
 
 `uh08Bnw1COFuJbHY3sV15NwZzR_CnAsp_PKaI6VKKUw`
+
+
+## Added Forex Market Hours page
+
+This version adds:
+
+- `/forex-market-hours`
+
+The page includes forex market session references, EA testing reminders, Malaysia time context and calls-to-action back to the EA calculator and free setup guide.
