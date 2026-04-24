@@ -178,3 +178,12 @@ This version publishes:
 - `/articles/prop-firm-daily-loss-and-max-drawdown-explained`
 
 The Articles page now shows the first four articles as Published.
+
+
+## Added fifth SEO article
+
+This version publishes:
+
+- `/articles/why-martingale-ea-is-dangerous-for-beginners`
+
+The Articles page now shows the first five articles as Published.
