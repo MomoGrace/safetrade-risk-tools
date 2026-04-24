@@ -159,3 +159,13 @@ This version includes:
 - `/articles/what-is-risk-per-trade-in-forex`
 
 The first published SEO article is: **What Is Risk per Trade in Forex?**
+
+
+## Added second and third SEO articles
+
+This version publishes:
+
+- `/articles/conservative-ea-settings-for-small-accounts`
+- `/articles/why-0-5-risk-is-safer-for-ea-beginners`
+
+The Articles page now shows the first three articles as Published.

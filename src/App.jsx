@@ -44,13 +44,13 @@ const articles = [
     title: "Conservative EA Settings for Small Accounts",
     slug: "conservative-ea-settings-for-small-accounts",
     description: "Understand why small accounts often need lower risk, fewer open trades and clear drawdown stop rules.",
-    status: "Coming soon",
+    status: "Published",
   },
   {
     title: "Why 0.5% Risk Is Safer for EA Beginners",
     slug: "why-0-5-risk-is-safer-for-ea-beginners",
     description: "A beginner-friendly explanation of why lower risk may help traders survive losing streaks during EA testing.",
-    status: "Coming soon",
+    status: "Published",
   },
   {
     title: "Prop Firm Daily Loss and Max Drawdown Explained",
@@ -862,6 +862,406 @@ function RiskPerTradeArticlePage() {
 }
 
 
+
+function ConservativeEASettingsArticlePage() {
+  return (
+    <>
+      <PageHero
+        eyebrow="EA Risk Management"
+        title="Conservative EA Settings for Small Accounts"
+        description="Learn conservative EA settings for small forex accounts, including risk per trade, daily loss limits, drawdown stop, max open trades and demo testing tips."
+      />
+      <ContentPage>
+        <article className="space-y-6">
+          <Card>
+            <p className="leading-7 text-zinc-600">
+              Running an Expert Advisor on a small forex account can be tempting. Many beginners want to start with USD100, USD300 or USD500 and let an EA trade automatically.
+            </p>
+            <p className="mt-4 leading-7 text-zinc-600">
+              But before using any EA, it is important to understand one thing: a small account needs conservative risk settings. A small account has less room for mistakes. A few oversized trades, high spread, poor market conditions or repeated losses can damage the account quickly.
+            </p>
+            <p className="mt-4 leading-7 text-zinc-600">
+              Forex trading is volatile and carries substantial risk. The CFTC warns that traders can lose money quickly when trading leveraged forex products. This article explains conservative EA settings for small accounts and why beginners should focus on risk control before profit.
+            </p>
+          </Card>
+
+          <InfoBlock title="What is a small EA account?">
+            <p>
+              A small EA account usually means an account size such as USD100, USD300, USD500 or USD1,000. The smaller the account, the more careful the risk settings should be.
+            </p>
+            <p>
+              For example, if your account is USD100, risking USD10 on one trade means you are risking 10% of your account. That is very aggressive. For conservative EA testing, the goal is not fast profit. The goal is to test the EA safely and understand how it behaves in real market conditions.
+            </p>
+          </InfoBlock>
+
+          <InfoBlock title="Recommended conservative EA settings">
+            <p>For a beginner or small account, a conservative EA setup may look like this:</p>
+            <div className="overflow-auto rounded-2xl border border-zinc-200">
+              <table className="w-full text-left text-sm">
+                <tbody>
+                  <tr className="border-t border-zinc-200"><td className="px-4 py-3 font-semibold">Deposit</td><td className="px-4 py-3">USD100 - USD500</td></tr>
+                  <tr className="border-t border-zinc-200"><td className="px-4 py-3 font-semibold">Risk per trade</td><td className="px-4 py-3">0.25% - 0.5%</td></tr>
+                  <tr className="border-t border-zinc-200"><td className="px-4 py-3 font-semibold">Max daily loss</td><td className="px-4 py-3">2%</td></tr>
+                  <tr className="border-t border-zinc-200"><td className="px-4 py-3 font-semibold">Max drawdown stop</td><td className="px-4 py-3">10%</td></tr>
+                  <tr className="border-t border-zinc-200"><td className="px-4 py-3 font-semibold">Max open trades</td><td className="px-4 py-3">1</td></tr>
+                  <tr className="border-t border-zinc-200"><td className="px-4 py-3 font-semibold">Account type</td><td className="px-4 py-3">Cent or Micro account</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              These settings are not designed to grow the account quickly. They are designed to reduce damage during losing periods.
+            </p>
+          </InfoBlock>
+
+          <InfoBlock title="1. Risk per trade: 0.25% - 0.5%">
+            <p>
+              Risk per trade is the amount you are willing to lose if one trade hits the stop loss. For small accounts, a conservative risk range is 0.25% to 0.5% per trade.
+            </p>
+            <div className="overflow-auto rounded-2xl border border-zinc-200">
+              <table className="w-full text-left text-sm">
+                <thead className="bg-zinc-100 text-zinc-600">
+                  <tr><th className="px-4 py-3">Account Balance</th><th className="px-4 py-3">0.25% Risk</th><th className="px-4 py-3">0.5% Risk</th></tr>
+                </thead>
+                <tbody>
+                  <tr className="border-t border-zinc-200"><td className="px-4 py-3">USD100</td><td className="px-4 py-3">USD0.25</td><td className="px-4 py-3">USD0.50</td></tr>
+                  <tr className="border-t border-zinc-200"><td className="px-4 py-3">USD300</td><td className="px-4 py-3">USD0.75</td><td className="px-4 py-3">USD1.50</td></tr>
+                  <tr className="border-t border-zinc-200"><td className="px-4 py-3">USD500</td><td className="px-4 py-3">USD1.25</td><td className="px-4 py-3">USD2.50</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              This may look very small, but that is the point. Small accounts need protection. An EA can experience losing streaks. If the EA risks too much per trade, the account can drop quickly before the trader understands what happened.
+            </p>
+          </InfoBlock>
+
+          <InfoBlock title="2. Max daily loss: 2%">
+            <p>
+              A daily loss limit stops the EA from continuing to trade after a bad day. For conservative EA testing, a daily loss limit of 2% can help reduce overtrading.
+            </p>
+            <div className="overflow-auto rounded-2xl border border-zinc-200">
+              <table className="w-full text-left text-sm">
+                <thead className="bg-zinc-100 text-zinc-600">
+                  <tr><th className="px-4 py-3">Account Balance</th><th className="px-4 py-3">2% Daily Loss Limit</th></tr>
+                </thead>
+                <tbody>
+                  <tr className="border-t border-zinc-200"><td className="px-4 py-3">USD100</td><td className="px-4 py-3">USD2</td></tr>
+                  <tr className="border-t border-zinc-200"><td className="px-4 py-3">USD300</td><td className="px-4 py-3">USD6</td></tr>
+                  <tr className="border-t border-zinc-200"><td className="px-4 py-3">USD500</td><td className="px-4 py-3">USD10</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              If the EA reaches the daily loss limit, it should stop opening new trades for the day. This matters because market conditions can change, spread can widen, and news can create volatility.
+            </p>
+          </InfoBlock>
+
+          <InfoBlock title="3. Max drawdown stop: 10%">
+            <p>
+              A maximum drawdown stop is a safety rule that stops the EA if the account drops too much. If the account equity falls by 10%, the EA should stop trading so the trader can review performance instead of letting the EA continue blindly.
+            </p>
+            <div className="overflow-auto rounded-2xl border border-zinc-200">
+              <table className="w-full text-left text-sm">
+                <thead className="bg-zinc-100 text-zinc-600">
+                  <tr><th className="px-4 py-3">Account Balance</th><th className="px-4 py-3">Stop EA at 10% Drawdown</th></tr>
+                </thead>
+                <tbody>
+                  <tr className="border-t border-zinc-200"><td className="px-4 py-3">USD100</td><td className="px-4 py-3">USD10 loss</td></tr>
+                  <tr className="border-t border-zinc-200"><td className="px-4 py-3">USD300</td><td className="px-4 py-3">USD30 loss</td></tr>
+                  <tr className="border-t border-zinc-200"><td className="px-4 py-3">USD500</td><td className="px-4 py-3">USD50 loss</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </InfoBlock>
+
+          <InfoBlock title="4. Max open trades: 1">
+            <p>
+              For conservative small account testing, the EA should not open too many trades at once. A safer setting is max open trades: 1. If the EA opens many trades at the same time, the total risk can become much larger than expected.
+            </p>
+            <p>
+              For example, if each trade risks 0.5% and the EA opens 5 trades, the total exposure may become 2.5%. That may be too high for a small account.
+            </p>
+          </InfoBlock>
+
+          <InfoBlock title="5. Use a cent or micro account">
+            <p>
+              Small accounts often work better with cent or micro accounts because standard accounts may have a minimum lot size that is too large for conservative risk. A cent account gives more flexibility because it allows smaller position sizing. This does not remove risk, but it can make conservative testing more realistic.
+            </p>
+          </InfoBlock>
+
+          <InfoBlock title="6. Avoid martingale and unlimited grid">
+            <p>
+              Many beginners are attracted to EAs that show smooth profits. But some of these systems use martingale or grid logic. A martingale EA may increase lot size after a loss. A grid EA may open multiple trades as price moves against the position. These systems can look stable for a while, but they may create large drawdowns during strong trends or unexpected market moves.
+            </p>
+            <p>A conservative EA setup should avoid:</p>
+            <ul className="list-disc space-y-2 pl-5">
+              <li>No fixed stop loss.</li>
+              <li>Unlimited grid.</li>
+              <li>Lot size increasing after losses.</li>
+              <li>No equity stop.</li>
+              <li>No drawdown protection.</li>
+              <li>High monthly return promises.</li>
+            </ul>
+          </InfoBlock>
+
+          <InfoBlock title="Example: USD300 conservative EA setup">
+            <div className="rounded-2xl bg-zinc-100 p-5 text-zinc-700">
+              <p><strong>Deposit:</strong> USD300</p>
+              <p><strong>Risk per trade:</strong> 0.25% - 0.5%</p>
+              <p><strong>Risk amount:</strong> USD0.75 - USD1.50</p>
+              <p><strong>Max daily loss:</strong> 2% = USD6</p>
+              <p><strong>Max drawdown stop:</strong> 10% = USD30</p>
+              <p><strong>Max open trades:</strong> 1</p>
+              <p><strong>Suggested account type:</strong> Cent or Micro</p>
+              <p><strong>Testing period:</strong> 14 - 30 days demo first</p>
+            </div>
+          </InfoBlock>
+
+          <InfoBlock title="Conservative EA settings checklist">
+            <ul className="list-disc space-y-2 pl-5">
+              <li>Risk per trade is 0.25% - 0.5%.</li>
+              <li>Max daily loss is set.</li>
+              <li>Max drawdown stop is set.</li>
+              <li>Max open trades is limited.</li>
+              <li>Stop loss is active.</li>
+              <li>Spread filter is active.</li>
+              <li>News filter is active.</li>
+              <li>No martingale.</li>
+              <li>No unlimited grid.</li>
+              <li>Demo test is completed first.</li>
+            </ul>
+          </InfoBlock>
+
+          <InfoBlock title="Final thoughts">
+            <p>
+              Conservative EA settings are not exciting, but they are practical. A good small account EA setup should focus on risk control, drawdown protection, small lot size, demo testing and realistic expectations.
+            </p>
+            <div className="rounded-2xl bg-zinc-100 p-5 font-semibold text-zinc-950">
+              If the account is small, the risk must be smaller.
+            </div>
+          </InfoBlock>
+
+          <div className="rounded-2xl bg-zinc-950 p-8 text-white">
+            <h2 className="text-2xl font-bold">Want to calculate your conservative EA risk settings?</h2>
+            <p className="mt-3 leading-7 text-zinc-300">
+              Use the free SafeTrade EA Calculator or download the Conservative EA Setup Guide for beginners.
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <a href="/#ea-calculator" className="rounded-full bg-white px-6 py-3 text-center text-sm font-bold text-zinc-950 hover:bg-zinc-200">
+                Use EA Calculator
+              </a>
+              <a href={TALLY_URL} target="_blank" rel="noopener noreferrer" className="rounded-full border border-zinc-600 px-6 py-3 text-center text-sm font-bold text-white hover:bg-zinc-900">
+                Get Free Setup Guide
+              </a>
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-zinc-200 bg-white p-6 text-sm leading-7 text-zinc-600">
+            <strong className="text-zinc-950">Risk Disclaimer:</strong> Forex and CFD trading involve risk and may not be suitable for all investors. This article is for educational and risk-planning purposes only. It does not provide financial advice, investment advice, trading signals or profit guarantees. Past performance does not guarantee future results. Trade only with money you can afford to lose.
+          </div>
+        </article>
+      </ContentPage>
+    </>
+  );
+}
+
+function HalfPercentRiskArticlePage() {
+  return (
+    <>
+      <PageHero
+        eyebrow="EA Risk Management"
+        title="Why 0.5% Risk Is Safer for EA Beginners"
+        description="Learn why 0.5% risk per trade may be safer for EA beginners, especially when testing automated trading on small forex accounts."
+      />
+      <ContentPage>
+        <article className="space-y-6">
+          <Card>
+            <p className="leading-7 text-zinc-600">
+              Many beginners start EA trading because they want automation. The idea sounds attractive: install an Expert Advisor, let it trade automatically and reduce the need to watch charts all day.
+            </p>
+            <p className="mt-4 leading-7 text-zinc-600">
+              But EA trading does not remove risk. In fact, automated trading can become dangerous if the risk setting is too high. An EA can open trades faster than a beginner can understand what is happening. This is why risk per trade is one of the most important settings for any EA user.
+            </p>
+            <p className="mt-4 leading-7 text-zinc-600">
+              For beginners, a conservative risk setting such as 0.5% per trade may be safer than aggressive settings like 2%, 5% or fixed high lot sizes.
+            </p>
+          </Card>
+
+          <InfoBlock title="What does 0.5% risk per trade mean?">
+            <p>
+              0.5% risk per trade means that each trade risks only half of one percent of the account balance. If you have a USD500 account and the EA risks 0.5% per trade, the planned loss on one trade should be around USD2.50 if the stop loss is hit.
+            </p>
+            <div className="overflow-auto rounded-2xl border border-zinc-200">
+              <table className="w-full text-left text-sm">
+                <thead className="bg-zinc-100 text-zinc-600">
+                  <tr><th className="px-4 py-3">Account Balance</th><th className="px-4 py-3">0.5% Risk Per Trade</th></tr>
+                </thead>
+                <tbody>
+                  <tr className="border-t border-zinc-200"><td className="px-4 py-3">USD100</td><td className="px-4 py-3">USD0.50</td></tr>
+                  <tr className="border-t border-zinc-200"><td className="px-4 py-3">USD300</td><td className="px-4 py-3">USD1.50</td></tr>
+                  <tr className="border-t border-zinc-200"><td className="px-4 py-3">USD500</td><td className="px-4 py-3">USD2.50</td></tr>
+                  <tr className="border-t border-zinc-200"><td className="px-4 py-3">USD1,000</td><td className="px-4 py-3">USD5.00</td></tr>
+                  <tr className="border-t border-zinc-200"><td className="px-4 py-3">USD10,000</td><td className="px-4 py-3">USD50.00</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              This may look small, but that is the purpose of conservative risk control. The goal is not to get rich quickly. The goal is to survive long enough to test the EA properly.
+            </p>
+          </InfoBlock>
+
+          <InfoBlock title="Why beginners should avoid high risk">
+            <p>
+              Many beginners think a small account needs high risk to grow faster. This thinking is dangerous. Small accounts are already fragile. If the risk is too high, a few losing trades can damage the account quickly.
+            </p>
+            <div className="overflow-auto rounded-2xl border border-zinc-200">
+              <table className="w-full text-left text-sm">
+                <thead className="bg-zinc-100 text-zinc-600">
+                  <tr><th className="px-4 py-3">Risk Per Trade</th><th className="px-4 py-3">Loss After 5 Losing Trades on USD500</th></tr>
+                </thead>
+                <tbody>
+                  <tr className="border-t border-zinc-200"><td className="px-4 py-3">0.5%</td><td className="px-4 py-3">Around USD12.50</td></tr>
+                  <tr className="border-t border-zinc-200"><td className="px-4 py-3">2%</td><td className="px-4 py-3">Around USD50</td></tr>
+                  <tr className="border-t border-zinc-200"><td className="px-4 py-3">5%</td><td className="px-4 py-3">Around USD125</td></tr>
+                  <tr className="border-t border-zinc-200"><td className="px-4 py-3">10%</td><td className="px-4 py-3">Around USD250</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </InfoBlock>
+
+          <InfoBlock title="EA trading can lose several trades in a row">
+            <p>
+              Every trading system can have losing streaks. Even if an EA looks profitable in a backtest, it can still lose several trades in a row in live or demo conditions.
+            </p>
+            <p>Reasons include:</p>
+            <ul className="list-disc space-y-2 pl-5">
+              <li>Market conditions change.</li>
+              <li>Spread becomes wider.</li>
+              <li>Slippage happens.</li>
+              <li>News creates sudden volatility.</li>
+              <li>Broker execution differs.</li>
+              <li>The strategy enters a bad cycle.</li>
+            </ul>
+            <p>
+              If the EA risks 5% per trade, a short losing streak can become serious. If the EA risks 0.5% per trade, the same losing streak is much easier to survive.
+            </p>
+          </InfoBlock>
+
+          <InfoBlock title="0.5% risk helps reduce emotional pressure">
+            <p>
+              Trading psychology matters, even when using an EA. A beginner may believe that automation removes emotion, but once real money is involved, emotions still appear.
+            </p>
+            <p>When the EA loses money, the user may feel fear, regret, impatience, doubt and pressure to recover quickly. A lower risk setting can reduce emotional pressure.</p>
+          </InfoBlock>
+
+          <InfoBlock title="0.5% risk is better for demo testing">
+            <p>
+              Before using a live account, beginners should test the EA on demo first. But demo testing should still use realistic risk settings. Testing an EA on demo with very high risk may not show whether the EA is suitable for cautious users.
+            </p>
+            <div className="rounded-2xl bg-zinc-100 p-5 text-zinc-700">
+              <p><strong>Demo account:</strong> USD500</p>
+              <p><strong>Risk setting:</strong> 0.5% per trade</p>
+              <p><strong>Max daily loss:</strong> 2%</p>
+              <p><strong>Max drawdown stop:</strong> 10%</p>
+              <p><strong>Max open trades:</strong> 1</p>
+            </div>
+          </InfoBlock>
+
+          <InfoBlock title="0.5% risk and daily loss limit">
+            <p>
+              Risk per trade is only one part of EA risk management. A beginner should also use a daily loss limit. A conservative setup may look like risk per trade: 0.5%, max daily loss: 2%, max drawdown stop: 10% and max open trades: 1.
+            </p>
+            <p>
+              With a USD500 account, 0.5% risk per trade equals USD2.50, and a 2% daily loss limit equals USD10. This means the EA should stop for the day if total loss reaches around USD10.
+            </p>
+          </InfoBlock>
+
+          <InfoBlock title="Why 0.5% is safer than fixed lot size">
+            <p>
+              Many beginners use fixed lot size because it feels simple. For example, they may say: I will just use 0.01 lot. But fixed lot size can be risky because it does not consider account balance, stop loss distance, currency pair, pip value, broker contract size or risk percentage.
+            </p>
+            <p>
+              A 0.5% risk setting is better because it is based on the account size and stop loss. Instead of asking what lot size should I use, a better question is: how much am I willing to risk if this trade loses?
+            </p>
+          </InfoBlock>
+
+          <InfoBlock title="When 0.5% risk may still be too high">
+            <p>Even 0.5% may be too high in some cases:</p>
+            <ul className="list-disc space-y-2 pl-5">
+              <li>The EA opens many trades at once.</li>
+              <li>The EA uses martingale.</li>
+              <li>The EA uses grid recovery.</li>
+              <li>There is no stop loss.</li>
+              <li>The spread is too high.</li>
+              <li>The account is very small.</li>
+              <li>The broker minimum lot size is too large.</li>
+            </ul>
+            <p>
+              Risk per trade is important, but it must work together with max open trades, max lot size, daily loss limit, max drawdown stop, news protection and spread filters.
+            </p>
+          </InfoBlock>
+
+          <InfoBlock title="Example: USD300 EA beginner setup">
+            <div className="rounded-2xl bg-zinc-100 p-5 text-zinc-700">
+              <p><strong>Deposit:</strong> USD300</p>
+              <p><strong>Risk per trade:</strong> 0.5%</p>
+              <p><strong>Risk amount per trade:</strong> USD1.50</p>
+              <p><strong>Max daily loss:</strong> 2% = USD6</p>
+              <p><strong>Max drawdown stop:</strong> 10% = USD30</p>
+              <p><strong>Max open trades:</strong> 1</p>
+              <p><strong>Suggested account:</strong> Cent or Micro</p>
+              <p><strong>Testing period:</strong> 14 - 30 days demo first</p>
+            </div>
+          </InfoBlock>
+
+          <InfoBlock title="Checklist before using 0.5% risk on an EA">
+            <ul className="list-disc space-y-2 pl-5">
+              <li>Does the EA use a real stop loss?</li>
+              <li>Can the EA calculate lot size by risk percentage?</li>
+              <li>Can you limit maximum open trades?</li>
+              <li>Can you set daily loss limit?</li>
+              <li>Can you set maximum drawdown stop?</li>
+              <li>Is there a spread filter?</li>
+              <li>Is there a news filter?</li>
+              <li>Does the EA avoid martingale?</li>
+              <li>Does the EA avoid unlimited grid?</li>
+              <li>Have you tested on demo first?</li>
+            </ul>
+          </InfoBlock>
+
+          <InfoBlock title="Final thoughts">
+            <p>
+              0.5% risk per trade is safer for EA beginners because it slows down the damage. It gives the trader time to observe, test and understand the EA. It also reduces emotional pressure and helps protect small accounts from fast drawdown.
+            </p>
+            <div className="rounded-2xl bg-zinc-100 p-5 font-semibold text-zinc-950">
+              If you are new to EA trading, risk small first.
+            </div>
+          </InfoBlock>
+
+          <div className="rounded-2xl bg-zinc-950 p-8 text-white">
+            <h2 className="text-2xl font-bold">Want to calculate your EA risk before trading?</h2>
+            <p className="mt-3 leading-7 text-zinc-300">
+              Use the free SafeTrade EA Calculator or download the Conservative EA Setup Guide for beginners.
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <a href="/#ea-calculator" className="rounded-full bg-white px-6 py-3 text-center text-sm font-bold text-zinc-950 hover:bg-zinc-200">
+                Use EA Calculator
+              </a>
+              <a href={TALLY_URL} target="_blank" rel="noopener noreferrer" className="rounded-full border border-zinc-600 px-6 py-3 text-center text-sm font-bold text-white hover:bg-zinc-900">
+                Get Free Setup Guide
+              </a>
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-zinc-200 bg-white p-6 text-sm leading-7 text-zinc-600">
+            <strong className="text-zinc-950">Risk Disclaimer:</strong> Forex and CFD trading involve risk and may not be suitable for all investors. This article is for educational and risk-planning purposes only. It does not provide financial advice, investment advice, trading signals or profit guarantees. Past performance does not guarantee future results. Trade only with money you can afford to lose.
+          </div>
+        </article>
+      </ContentPage>
+    </>
+  );
+}
+
+
 function HomePage() {
   return (
       <main id="top">
@@ -992,6 +1392,8 @@ export default function App() {
       "/contact": "Contact | SafeTrade Risk Tools",
       "/articles": "Articles | SafeTrade Risk Tools",
       "/articles/what-is-risk-per-trade-in-forex": "What Is Risk per Trade in Forex? | SafeTrade Risk Tools",
+      "/articles/conservative-ea-settings-for-small-accounts": "Conservative EA Settings for Small Accounts | SafeTrade Risk Tools",
+      "/articles/why-0-5-risk-is-safer-for-ea-beginners": "Why 0.5% Risk Is Safer for EA Beginners | SafeTrade Risk Tools",
     };
     document.title = titles[path] || "SafeTrade Risk Tools";
   }, [path]);
@@ -1004,6 +1406,8 @@ export default function App() {
   else if (path === "/contact") page = <ContactPage />;
   else if (path === "/articles") page = <ArticlesPage />;
   else if (path === "/articles/what-is-risk-per-trade-in-forex") page = <RiskPerTradeArticlePage />;
+  else if (path === "/articles/conservative-ea-settings-for-small-accounts") page = <ConservativeEASettingsArticlePage />;
+  else if (path === "/articles/why-0-5-risk-is-safer-for-ea-beginners") page = <HalfPercentRiskArticlePage />;
   else if (path !== "/") page = <NotFoundPage />;
 
   return (
