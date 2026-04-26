@@ -402,7 +402,7 @@ const TALLY_URL = "https://tally.so/r/81JKpA";
 function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-zinc-200 bg-white/90 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-4">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-10 py-4">
         <a href="/" className="text-lg font-black tracking-tight">BytesTrade Risk Tools</a>
         <nav className="hidden items-center gap-8 text-sm font-medium text-zinc-600 md:flex">
           <a href="/#ea-calculator" className="hover:text-zinc-950">EA Calculator</a>
