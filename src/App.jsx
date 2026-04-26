@@ -2103,42 +2103,41 @@ function ForexMarketHoursPage() {
     </>
   );
 }
-
-function DrawdownCalculatorPage() {
+function RiskRewardCalculatorPage() {
 const [result, setResult] = React.useState(null);
 
   return (
     <>
       <PageHero
         eyebrow="Forex Risk Calculator"
-        title="Drawdown Calculator"
-        description="Calculate account drawdown, remaining balance and recovery percentage for forex, EA and prop firm risk planning."
+        title="Risk Reward Calculator"
+        description="Calculate risk reward ratio, potential profit and trading setup efficiency for forex and prop firm risk planning."
       />
       <ContentPage>
         <article className="space-y-6">
           <Card>
-            <h2 className="text-2xl font-bold text-zinc-950 mb-4">Quick Answer: What Is Drawdown?</h2>
+            <h2 className="text-2xl font-bold text-zinc-950 mb-4">Quick Answer:What Is Risk Reward Ratio? </h2>
             <p className="leading-7 text-zinc-600">
-              Drawdown is the percentage loss from your account peak balance to a lower balance. If your account drops from USD1,000 to USD800, the drawdown is 20%. Managing drawdown is important because large losses require much bigger gains to recover.
-            </p>
+              Risk reward ratio compares the amount you risk with the potential profit of a trade. For example, if you risk USD50 to make USD150, the risk reward ratio is 1:3. A higher reward compared to risk can help traders stay profitable even with a lower win rate.
+             </p>
           </Card>
 
           <Card>
-            <h2 className="text-2xl font-bold text-zinc-950 mb-4">Drawdown Calculator</h2>
+            <h2 className="text-2xl font-bold text-zinc-950 mb-4">Risk Reward Calculator</h2>
             <p className="leading-7 text-zinc-600">
-              Use this calculator to estimate remaining balance and recovery needed after a trading loss.
-            </p>
+              Use this calculator to estimate your risk reward ratio before entering a trade.
+             </p>
             <div className="mt-6 grid gap-4 md:grid-cols-2">
   <input
-    id="balance"
+    id="risk"
     type="number"
-    placeholder="Starting Balance (USD)"
+    placeholder="Risk (USD)"
     className="rounded-xl border border-zinc-300 p-3"
   />
   <input
-    id="drawdown"
+    id="reward"
     type="number"
-    placeholder="Drawdown (%)"
+    placeholder="Reward (USD)"
     className="rounded-xl border border-zinc-300 p-3"
   />
 </div>
@@ -2146,44 +2145,32 @@ const [result, setResult] = React.useState(null);
 <button
   className="mt-4 rounded-xl bg-black text-white px-6 py-3"
   onClick={() => {
-  const balance = parseFloat(document.getElementById("balance").value);
-  const dd = parseFloat(document.getElementById("drawdown").value);
+  const risk = parseFloat(document.getElementById("risk").value);
+  const reward = parseFloat(document.getElementById("reward").value);
 
-  if (!balance || !dd) return;
+  if (isNaN(risk) || isNaN(reward)) return;
 
-  const remaining = balance * (1 - dd / 100);
-  const recovery = (dd / (100 - dd)) * 100;
+  const ratio = reward / risk;
 
-  setResult({
-    remaining,
-    recovery
-  });
+  setResult({ ratio });
 }}
 >
   Calculate
 </button>
 {result && (
   <div className="mt-4 rounded-xl border p-4 bg-white">
-    <p><strong>Remaining Balance:</strong> ${result.remaining.toFixed(2)}</p>
-    <p><strong>Recovery Needed:</strong> {result.recovery.toFixed(2)}%</p>
+    <p><strong>Risk Reward Ratio:</strong> 1:{result.ratio.toFixed(2)}</p>
   </div>
 )}
+  
             <div className="mt-6 rounded-2xl border border-zinc-200 bg-zinc-50 p-4">
-              <p className="font-bold text-zinc-950">Formula:</p>
-              <p className="mt-2 text-zinc-600">Remaining balance = Starting balance × (1 - Drawdown %)</p>
-              <p className="mt-2 text-zinc-600">Recovery needed = Drawdown % ÷ (100 - Drawdown %) × 100</p>
-            </div>
+  <p className="font-bold text-zinc-950">Formula:</p>
+  <p className="mt-2 text-zinc-600">
+    Risk Reward Ratio = Reward ÷ Risk
+  </p>
+</div>
           </Card>
 
-          <Card>
-            <h2 className="text-xl font-bold text-zinc-950 mb-4">Drawdown Recovery Table</h2>
-            <ul className="text-zinc-600 leading-7 list-disc pl-5 space-y-2">
-              <li>10% loss → need 11% gain</li>
-              <li>20% loss → need 25% gain</li>
-              <li>50% loss → need 100% gain</li>
-              <li>80% loss → need 400% gain</li>
-            </ul>
-          </Card>
         </article>
       </ContentPage>
     </>
