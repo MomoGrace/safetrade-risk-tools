@@ -2105,6 +2105,8 @@ function ForexMarketHoursPage() {
 }
 
 function DrawdownCalculatorPage() {
+const [result, setResult] = React.useState(null);
+
   return (
     <>
       <PageHero
@@ -2144,25 +2146,28 @@ function DrawdownCalculatorPage() {
 <button
   className="mt-4 rounded-xl bg-black text-white px-6 py-3"
   onClick={() => {
-    const balance = parseFloat(document.getElementById("balance").value);
-    const dd = parseFloat(document.getElementById("drawdown").value);
+  const balance = parseFloat(document.getElementById("balance").value);
+  const dd = parseFloat(document.getElementById("drawdown").value);
 
-    if (!balance || !dd) return;
+  if (!balance || !dd) return;
 
-    const remaining = balance * (1 - dd / 100);
-    const recovery = (dd / (100 - dd)) * 100;
+  const remaining = balance * (1 - dd / 100);
+  const recovery = (dd / (100 - dd)) * 100;
 
-    alert(
-      "Remaining Balance: $" +
-        remaining.toFixed(2) +
-        "\nRecovery Needed: " +
-        recovery.toFixed(2) +
-        "%"
-    );
-  }}
+  setResult({
+    remaining,
+    recovery
+  });
+}}
 >
   Calculate
 </button>
+{result && (
+  <div className="mt-4 rounded-xl border p-4 bg-white">
+    <p><strong>Remaining Balance:</strong> ${result.remaining.toFixed(2)}</p>
+    <p><strong>Recovery Needed:</strong> {result.recovery.toFixed(2)}%</p>
+  </div>
+)}
             <div className="mt-6 rounded-2xl border border-zinc-200 bg-zinc-50 p-4">
               <p className="font-bold text-zinc-950">Formula:</p>
               <p className="mt-2 text-zinc-600">Remaining balance = Starting balance × (1 - Drawdown %)</p>
