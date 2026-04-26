@@ -2204,8 +2204,12 @@ const [result, setResult] = React.useState(null);
           <Card>
             <h2 className="text-2xl font-bold text-zinc-950 mb-4">Risk Reward Calculator</h2>
             <p className="leading-7 text-zinc-600">
-              Use this calculator to estimate your risk reward ratio before entering a trade.
-             </p>
+  Use this calculator to estimate your risk reward ratio before entering a trade.
+</p>
+
+<p className="text-sm text-zinc-500 mt-2">
+  👉 Want a safer trading setup? Get our free conservative EA guide.
+</p>
             <div className="mt-6 grid gap-4 md:grid-cols-2">
   <input
     id="risk"
