@@ -655,33 +655,149 @@ function ArticlesPage() {
   return (
     <>
       <PageHero
-        eyebrow="Articles"
-        title="Forex risk management articles"
-        description="Beginner-friendly guides about forex risk per trade, conservative EA settings, prop firm limits and automated trading risk."
+        eyebrow="Forex • EA • Prop Firm Risk Guides"
+        title="Forex Risk Management Articles"
+        description="Beginner-friendly guides about forex risk per trade, conservative EA settings, prop firm limits, drawdown control and automated trading risk."
       />
+
       <ContentPage>
-        <div className="grid gap-5 md:grid-cols-2">
-          {articles.map((article) => (
-            <Card key={article.slug}>
-              <div className="mb-3 flex items-center justify-between gap-3">
-                <span className="rounded-full bg-zinc-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-zinc-500">
-                  {article.status}
-                </span>
-              </div>
-              <h2 className="text-2xl font-bold text-zinc-950">{article.title}</h2>
-              <p className="mt-3 leading-7 text-zinc-600">{article.description}</p>
-              {article.status === "Published" ? (
-                <a
-                  href={`/articles/${article.slug}`}
-                  className="mt-5 inline-flex rounded-full bg-zinc-950 px-5 py-2 text-sm font-bold text-white hover:bg-zinc-800"
-                >
-                  Read article
-                </a>
-              ) : (
-                <p className="mt-5 text-sm font-semibold text-zinc-500">Article draft planned.</p>
-              )}
-            </Card>
-          ))}
+        <div className="space-y-12">
+          <Card>
+            <h2 className="text-2xl font-bold text-zinc-950 mb-4">
+              Learn Safer Forex Risk Management
+            </h2>
+            <p className="text-zinc-600 leading-7">
+              BytesTrade Risk Tools publishes practical guides for beginner forex
+              traders, EA users and prop firm challenge participants. The goal is
+              to help traders understand daily loss limits, max drawdown, lot size,
+              risk per trade and conservative trading settings before using real money.
+            </p>
+          </Card>
+
+          <section>
+            <h2 className="text-2xl font-bold text-zinc-950 mb-5">
+              Topics We Cover
+            </h2>
+
+            <div className="grid gap-5 md:grid-cols-3">
+              <Card>
+                <h3 className="text-xl font-bold text-zinc-950 mb-3">
+                  Prop Firm Risk
+                </h3>
+                <p className="text-zinc-600 leading-7">
+                  Learn how daily loss, max drawdown, floating loss and account
+                  protection rules work in prop firm trading challenges.
+                </p>
+              </Card>
+
+              <Card>
+                <h3 className="text-xl font-bold text-zinc-950 mb-3">
+                  EA Risk Settings
+                </h3>
+                <p className="text-zinc-600 leading-7">
+                  Understand conservative EA settings, smaller lot sizes, lower
+                  risk per trade and why aggressive automation can damage accounts.
+                </p>
+              </Card>
+
+              <Card>
+                <h3 className="text-xl font-bold text-zinc-950 mb-3">
+                  Drawdown Control
+                </h3>
+                <p className="text-zinc-600 leading-7">
+                  Learn how to reduce drawdown, avoid overtrading and protect
+                  your trading account during volatile market conditions.
+                </p>
+              </Card>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold text-zinc-950 mb-5">
+              Latest Forex Risk Guides
+            </h2>
+
+            <div className="grid gap-5 md:grid-cols-2">
+              {articles.map((article) => (
+                <Card key={article.slug}>
+                  <div className="mb-3 flex items-center justify-between gap-3">
+                    <span className="rounded-full bg-zinc-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-zinc-500">
+                      {article.status}
+                    </span>
+                  </div>
+
+                  <h3 className="text-2xl font-bold text-zinc-950 mb-3">
+                    <a href={`/articles/${article.slug}/`}>
+                      {article.title}
+                    </a>
+                  </h3>
+
+                  <p className="text-zinc-600 leading-7 mb-5">
+                    {article.description}
+                  </p>
+
+                  <a
+                    href={`/articles/${article.slug}/`}
+                    className="font-semibold text-zinc-950 underline"
+                  >
+                    Read More
+                  </a>
+                </Card>
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold text-zinc-950 mb-5">
+              Forex Risk Management FAQ
+            </h2>
+
+            <div className="space-y-5">
+              <Card>
+                <h3 className="text-xl font-bold text-zinc-950 mb-2">
+                  Why is risk management important in forex?
+                </h3>
+                <p className="text-zinc-600 leading-7">
+                  Risk management helps traders protect their account from large
+                  losses, emotional trading and sudden drawdown during volatile
+                  market conditions.
+                </p>
+              </Card>
+
+              <Card>
+                <h3 className="text-xl font-bold text-zinc-950 mb-2">
+                  What is a safe risk per trade for beginners?
+                </h3>
+                <p className="text-zinc-600 leading-7">
+                  Many conservative traders use 0.25% to 1% risk per trade,
+                  especially when trading small accounts, testing an EA or joining
+                  a prop firm challenge.
+                </p>
+              </Card>
+
+              <Card>
+                <h3 className="text-xl font-bold text-zinc-950 mb-2">
+                  Are EA systems safe for prop firm accounts?
+                </h3>
+                <p className="text-zinc-600 leading-7">
+                  EA systems can be used carefully, but traders must control lot
+                  size, daily loss, max drawdown, news exposure and overtrading risk.
+                </p>
+              </Card>
+
+              <Card>
+                <h3 className="text-xl font-bold text-zinc-950 mb-2">
+                  Why can Google show Soft 404 for an articles page?
+                </h3>
+                <p className="text-zinc-600 leading-7">
+                  A Soft 404 can happen when a page technically loads but Google
+                  believes the page has too little useful content. Adding clear
+                  explanations, categories, article summaries and internal links
+                  can help the page look more complete.
+                </p>
+              </Card>
+            </div>
+          </section>
         </div>
       </ContentPage>
     </>
