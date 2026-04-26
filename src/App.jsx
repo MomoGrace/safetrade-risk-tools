@@ -411,8 +411,6 @@ function Header() {
            <a href="/risk-reward-calculator" className="hover:text-zinc-950">
   Risk Reward
 </a>
-<a href="/split-pdf" className="hover:text-zinc-950">Split PDF</a>
-<a href="/merge-pdf" className="hover:text-zinc-950">Merge PDF</a>
           <a href="/forex-market-hours" className="hover:text-zinc-950">Market Hours</a>
           <a href="/privacy-policy" className="hover:text-zinc-950">Privacy Policy</a>
             <a href="/articles" className="hover:text-zinc-950">Articles</a>
@@ -2267,157 +2265,6 @@ function RiskRewardCalculatorPage() {
   );
 }
 
-function SplitPDFPage() {
-  return (
-    <>
-      <PageHero
-        eyebrow="PDF Tools"
-        title="Split PDF Online Free (Fast & Secure)"
-        description="Learn how to split PDF files online for free. Step-by-step guide, tools comparison, and best methods for beginners."
-      />
-      <ContentPage>
-        <article className="space-y-6">
-
-          <Card>
-            <h2 className="text-2xl font-bold text-zinc-950 mb-4">
-              Quick Answer: How to Split a PDF File?
-            </h2>
-            <p className="leading-7 text-zinc-600">
-              You can split a PDF file by using online tools like Smallpdf, iLovePDF, or Adobe Acrobat. Simply upload your file, select the pages you want to extract, and download the split PDF instantly.
-            </p>
-          </Card>
-
-          <Card>
-            <h2 className="text-2xl font-bold text-zinc-950 mb-4">
-              Best Free PDF Split Tools
-            </h2>
-
-            <ul className="list-disc pl-5 text-zinc-600 space-y-2">
-              <li><strong>Smallpdf</strong> – Simple and fast</li>
-              <li><strong>iLovePDF</strong> – Beginner-friendly</li>
-              <li><strong>Adobe Acrobat</strong> – Most powerful</li>
-            </ul>
-          </Card>
-
-          <Card>
-            <h2 className="text-2xl font-bold text-zinc-950 mb-4">
-              Step-by-Step: Split PDF Online
-            </h2>
-
-            <ol className="list-decimal pl-5 text-zinc-600 space-y-2">
-              <li>Upload your PDF file</li>
-              <li>Select pages or ranges</li>
-              <li>Click “Split”</li>
-              <li>Download your new PDF</li>
-            </ol>
-          </Card>
-
-          <Card>
-            <h2 className="text-2xl font-bold text-zinc-950 mb-4">
-              Why Split PDF Files?
-            </h2>
-            <p className="leading-7 text-zinc-600">
-              Splitting PDFs helps you extract important pages, reduce file size, and organize documents efficiently. It is commonly used in business, education, and legal workflows.
-            </p>
-          </Card>
-
-          <Card>
-            <h2 className="text-2xl font-bold text-zinc-950 mb-4">
-              FAQ: Split PDF
-            </h2>
-
-            <p className="text-zinc-600">
-              <strong>Is it safe to split PDF online?</strong><br />
-              Yes, most tools delete files after processing.
-            </p>
-
-            <p className="text-zinc-600 mt-3">
-              <strong>Can I split PDF without software?</strong><br />
-              Yes, online tools work directly in your browser.
-            </p>
-          </Card>
-
-        </article>
-      </ContentPage>
-    </>
-  );
-}
-
-function MergePDFPage() {
-  return (
-    <>
-      <PageHero
-        eyebrow="PDF Tools"
-        title="Merge PDF Online Free (Combine Files Easily)"
-        description="Learn how to merge PDF files online for free. Step-by-step guide, best tools, and safe methods for combining PDFs."
-      />
-      <ContentPage>
-        <article className="space-y-6">
-
-          <Card>
-            <h2 className="text-2xl font-bold text-zinc-950 mb-4">
-              Quick Answer: How to Merge PDF Files?
-            </h2>
-            <p className="leading-7 text-zinc-600">
-              You can merge PDF files by using online tools like Smallpdf, iLovePDF, or Adobe Acrobat. Upload multiple PDFs, arrange the order, click merge, and download your combined file instantly.
-            </p>
-          </Card>
-
-          <Card>
-            <h2 className="text-2xl font-bold text-zinc-950 mb-4">
-              Best Free PDF Merge Tools
-            </h2>
-
-            <ul className="list-disc pl-5 text-zinc-600 space-y-2">
-              <li><strong>Smallpdf</strong> – Fast and clean interface</li>
-              <li><strong>iLovePDF</strong> – Easy for beginners</li>
-              <li><strong>Adobe Acrobat</strong> – Professional option</li>
-            </ul>
-          </Card>
-
-          <Card>
-            <h2 className="text-2xl font-bold text-zinc-950 mb-4">
-              Step-by-Step: Merge PDF Online
-            </h2>
-
-            <ol className="list-decimal pl-5 text-zinc-600 space-y-2">
-              <li>Upload multiple PDF files</li>
-              <li>Arrange pages in the correct order</li>
-              <li>Click “Merge PDF”</li>
-              <li>Download your combined file</li>
-            </ol>
-          </Card>
-
-          <Card>
-            <h2 className="text-2xl font-bold text-zinc-950 mb-4">
-              Why Merge PDF Files?
-            </h2>
-            <p className="leading-7 text-zinc-600">
-              Merging PDFs helps you organize documents, combine reports, and simplify file sharing. It is widely used in business, school, and daily work tasks.
-            </p>
-          </Card>
-
-          <Card>
-            <h2 className="text-2xl font-bold text-zinc-950 mb-4">
-              FAQ: Merge PDF
-            </h2>
-
-            <p className="text-zinc-600">
-              <strong>Is merging PDF online safe?</strong><br />
-              Yes, most tools automatically delete your files after processing.
-            </p>
-
-            <p className="text-zinc-600 mt-3">
-              <strong>Can I merge PDF without installing software?</strong><br />
-              Yes, all tools work directly in your browser.
-            </p>
-          </Card>
-
-        </article>
-      </ContentPage>
-    </>
-  );
-}
 function HomePage() {
   return (
       <main id="top">
@@ -2568,8 +2415,6 @@ export default function App() {
   else if (path === "/forex-market-hours") page = <ForexMarketHoursPage />;
   else if (path === "/drawdown-calculator") page = <DrawdownCalculatorPage />;
   else if (path === "/risk-reward-calculator") page = <RiskRewardCalculatorPage />;
-  else if (path === "/split-pdf") page = <SplitPDFPage />;
-  else if (path === "/merge-pdf") page = <MergePDFPage />;
   else if (path === "/articles") page = <ArticlesPage />;
   else if (path === "/articles/what-is-risk-per-trade-in-forex") page = <RiskPerTradeArticlePage />;
   else if (path === "/articles/conservative-ea-settings-for-small-accounts") page = <ConservativeEASettingsArticlePage />;
