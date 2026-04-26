@@ -2232,9 +2232,9 @@ if (isNaN(risk) || isNaN(reward)) return;
 let ratio;
 
 if (reward > risk) {
-  ratio = `1:${(reward / risk).toFixed(2)}`;
+  ratio = `1:${parseFloat((reward / risk).toFixed(2))}`;
 } else {
-  ratio = `${(risk / reward).toFixed(2)}:1`;
+  ratio = `${parseFloat((risk / reward).toFixed(2))}:1`;
 }
 
 setResult({ ratio });
