@@ -1001,7 +1001,7 @@ function ConservativeEASettingsArticlePage() {
           </Card>
           <Card>
           <h2 className="text-xl font-bold text-zinc-950 mb-4">
-          Drawdown Recovery Example
+          Drawdown Recovery Table
            </h2>
           <ul className="text-zinc-600 leading-7 list-disc pl-5 space-y-2">
             <li>10% loss → need 11% gain</li>
