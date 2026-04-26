@@ -407,7 +407,7 @@ function Header() {
         <nav className="hidden items-center gap-6 text-sm font-medium text-zinc-600 md:flex">
           <a href="/#ea-calculator" className="hover:text-zinc-950">EA Calculator</a>
           <a href="/#prop-firm" className="hover:text-zinc-950">Prop Firm</a>
-          <a href="/#drawdown" className="hover:text-zinc-950">Drawdown</a>
+          <a href="/drawdown-calculator" className="hover:text-zinc-950">Drawdown Calculator</a>
           <a href="/forex-market-hours" className="hover:text-zinc-950">Market Hours</a>
           <a href="/privacy-policy" className="hover:text-zinc-950">Privacy Policy</a>
             <a href="/articles" className="hover:text-zinc-950">Articles</a>
@@ -2355,6 +2355,7 @@ export default function App() {
         <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-zinc-600 md:flex-row md:items-center md:justify-between">
           <p>© 2026 BytesTrade Risk Tools. Educational content only.</p>
           <nav className="flex flex-wrap gap-4">
+            <a href="/drawdown-calculator" className="hover:text-zinc-950">Drawdown Calculator</a>
             <a href="/articles" className="hover:text-zinc-950">Articles</a>
             <a href="/about" className="hover:text-zinc-950">About</a>
             <a href="/privacy-policy" className="hover:text-zinc-950">Privacy Policy</a>
