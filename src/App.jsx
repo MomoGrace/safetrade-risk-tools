@@ -999,6 +999,17 @@ function ConservativeEASettingsArticlePage() {
           Conservative EA risk settings help protect small forex accounts by limiting risk per trade, reducing drawdown, and avoiding account blowouts. For most beginners, risking 0.5% to 1% per trade is safer than using aggressive lot sizes. A 50% account loss requires a 100% gain to recover, so keeping drawdown low is essential for long-term survival.
           </p>
           </Card>
+          <Card>
+          <h2 className="text-xl font-bold text-zinc-950 mb-4">
+          Drawdown Recovery Example
+           </h2>
+          <ul className="text-zinc-600 leading-7 list-disc pl-5 space-y-2">
+            <li>10% loss → need 11% gain</li>
+           <li>20% loss → need 25% gain</li>
+          <li>50% loss → need 100% gain</li>
+           <li>80% loss → need 400% gain</li>
+           </ul>
+            </Card>
            <Card>
             <p className="leading-7 text-zinc-600">
               Running an Expert Advisor on a small forex account can be tempting. Many beginners want to start with USD100, USD300 or USD500 and let an EA trade automatically.
