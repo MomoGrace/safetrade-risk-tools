@@ -992,6 +992,14 @@ function ConservativeEASettingsArticlePage() {
       <ContentPage>
         <article className="space-y-6">
           <Card>
+          <h2 className="text-2xl font-bold text-zinc-950 mb-4">
+          Quick Answer: Conservative EA Risk Settings
+          </h2>
+          <p className="leading-7 text-zinc-600">
+          Conservative EA risk settings help protect small forex accounts by limiting risk per trade, reducing drawdown, and avoiding account blowouts. For most beginners, risking 0.5% to 1% per trade is safer than using aggressive lot sizes. A 50% account loss requires a 100% gain to recover, so keeping drawdown low is essential for long-term survival.
+          </p>
+          </Card>
+           <Card>
             <p className="leading-7 text-zinc-600">
               Running an Expert Advisor on a small forex account can be tempting. Many beginners want to start with USD100, USD300 or USD500 and let an EA trade automatically.
             </p>
