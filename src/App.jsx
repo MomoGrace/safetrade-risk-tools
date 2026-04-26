@@ -414,7 +414,6 @@ function Header() {
             <a href="/articles" className="hover:text-zinc-950">Articles</a>
             <a href="/about" className="hover:text-zinc-950">About</a>
           <a href="/disclaimer" className="hover:text-zinc-950">Disclaimer</a>
-          <a href="/contact" className="hover:text-zinc-950">Contact</a>
         </nav>
         <a href={TALLY_URL} target="_blank" rel="noopener noreferrer" className="rounded-full bg-zinc-950 px-5 py-2 text-sm font-semibold text-white hover:bg-zinc-800">
           Get Setup Guide
@@ -2426,9 +2425,9 @@ export default function App() {
       <Header />
       {page}
       <footer className="border-t border-zinc-200 bg-white px-5 py-8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-zinc-600 md:flex-row md:items-center md:justify-between">
-          <p>© 2026 BytesTrade Risk Tools. Educational content only.</p>
-          <nav className="flex flex-wrap gap-4">
+        <div className="mx-auto max-w-7xl flex flex-col gap-4 text-sm text-zinc-600 md:flex-row md:items-center md:justify-between">
+          <p>© 2026 BytesTrade Risk Tools. For educational content only.</p>
+          <nav className="flex flex-wrap gap-x-4 gap-y-2">
             <a href="/drawdown-calculator" className="hover:text-zinc-950">Drawdown Calculator</a>
             <a href="/articles" className="hover:text-zinc-950">Articles</a>
             <a href="/about" className="hover:text-zinc-950">About</a>
@@ -2438,6 +2437,6 @@ export default function App() {
           </nav>
         </div>
       </footer>
-    </div>
+    </div>For
   );
 }
