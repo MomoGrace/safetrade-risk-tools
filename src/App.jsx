@@ -2207,9 +2207,14 @@ const [result, setResult] = React.useState(null);
   Use this calculator to estimate your risk reward ratio before entering a trade.
 </p>
 
-<p className="text-sm mt-2">
-  👉 <a href="https://tally.so/r/81JkPA" target="_blank" rel="noopener noreferrer" className="text-black font-medium underline hover:text-zinc-700">
-    Get FREE EA Setup Guide (Safe Strategy for Beginners)
+<p className="mt-3">
+  <a 
+    href="https://tally.so/r/81JkPA" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="inline-block bg-black text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-zinc-800"
+  >
+    🚀 Get FREE EA Setup Guide (Beginner Safe Strategy)
   </a>
 </p>
  
