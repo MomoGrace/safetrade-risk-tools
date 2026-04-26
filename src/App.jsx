@@ -390,7 +390,7 @@ function LeadCapture() {
               Send Me the Setup Guide
             </button>
           </form>
-        </Card>
+        </Card>header
       </div>
     </section>
   );
@@ -402,13 +402,13 @@ const TALLY_URL = "https://tally.so/r/81JKpA";
 function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-zinc-200 bg-white/90 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-4">
         <a href="/" className="text-lg font-black tracking-tight">BytesTrade Risk Tools</a>
-        <nav className="hidden items-center gap-6 text-sm font-medium text-zinc-600 md:flex">
+        <nav className="hidden items-center gap-8 text-sm font-medium text-zinc-600 md:flex">
           <a href="/#ea-calculator" className="hover:text-zinc-950">EA Calculator</a>
           <a href="/#prop-firm" className="hover:text-zinc-950">Prop Firm</a>
           <a href="/drawdown-calculator" className="hover:text-zinc-950">Drawdown Calculator</a>
-           <a href="/risk-reward-calculator" className="hover:text-zinc-950">
+           <a href="/risk-reward-calculator" className="hover:text-zinc-950">hidden
   Risk Reward
 </a>
           <a href="/forex-market-hours" className="hover:text-zinc-950">Market Hours</a>
@@ -2211,7 +2211,7 @@ function RiskRewardCalculatorPage() {
                 href="https://tally.so/r/81JKpA"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-black text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-zinc-800"
+                className="inline-block bg-black text-white px-4 py-2 rounded-lg text-sm font-normal hover:bg-zinc-800"
               >
                 🚀 Get FREE EA Setup Guide (Beginner Safe Strategy)
               </a>
