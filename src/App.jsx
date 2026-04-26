@@ -2225,20 +2225,26 @@ const [result, setResult] = React.useState(null);
   className="mt-4 rounded-xl bg-black text-white px-6 py-3"
   onClick={() => {
   const risk = parseFloat(document.getElementById("risk").value);
-  const reward = parseFloat(document.getElementById("reward").value);
+const reward = parseFloat(document.getElementById("reward").value);
 
-  if (isNaN(risk) || isNaN(reward)) return;
+if (isNaN(risk) || isNaN(reward)) return;
 
-  const ratio = reward / risk;
+let ratio;
 
-  setResult({ ratio });
+if (reward > risk) {
+  ratio = `1:${(reward / risk).toFixed(2)}`;
+} else {
+  ratio = `${(risk / reward).toFixed(2)}:1`;
+}
+
+setResult({ ratio });
 }}
 >
   Calculate
 </button>
 {result && (
   <div className="mt-4 rounded-xl border p-4 bg-white">
-    <p><strong>Risk Reward Ratio:</strong> 1:{result.ratio.toFixed(2)}</p>
+    <p><strong>Risk Reward Ratio:</strong> {result.ratio}</p>
   </div>
 )}
   
