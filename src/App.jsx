@@ -409,7 +409,7 @@ function Header() {
           <a href="/#prop-firm" className="hover:text-zinc-950">Prop Firm</a>
           <a href="/#drawdown" className="hover:text-zinc-950">Drawdown</a>
           <a href="/forex-market-hours" className="hover:text-zinc-950">Market Hours</a>
-          <a href="/forex-market-hours" className="hover:text-zinc-950">Market Hours</a>
+          <a href="/privacy-policy" className="hover:text-zinc-950">Privacy Policy</a>
             <a href="/articles" className="hover:text-zinc-950">Articles</a>
             <a href="/about" className="hover:text-zinc-950">About</a>
           <a href="/disclaimer" className="hover:text-zinc-950">Disclaimer</a>
