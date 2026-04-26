@@ -2183,7 +2183,7 @@ function DrawdownCalculatorPage() {
   );
 }
 function RiskRewardCalculatorPage() {
-const [result, setResult] = React.useState(null);
+  const [result, setResult] = React.useState(null);
 
   return (
     <>
@@ -2195,81 +2195,71 @@ const [result, setResult] = React.useState(null);
       <ContentPage>
         <article className="space-y-6">
           <Card>
-            <h2 className="text-2xl font-bold text-zinc-950 mb-4">Quick Answer:What Is Risk Reward Ratio? </h2>
+            <h2 className="text-2xl font-bold text-zinc-950 mb-4">Quick Answer: What Is Risk Reward Ratio?</h2>
             <p className="leading-7 text-zinc-600">
               Risk reward ratio compares the amount you risk with the potential profit of a trade. For example, if you risk USD50 to make USD150, the risk reward ratio is 1:3. A higher reward compared to risk can help traders stay profitable even with a lower win rate.
-             </p>
+            </p>
           </Card>
 
           <Card>
             <h2 className="text-2xl font-bold text-zinc-950 mb-4">Risk Reward Calculator</h2>
             <p className="leading-7 text-zinc-600">
-  Use this calculator to estimate your risk reward ratio before entering a trade.
-</p>
+              Use this calculator to estimate your risk reward ratio before entering a trade.
+            </p>
 
-<p className="mt-3">
-  <a 
-    href="https://tally.so/r/81JkPA" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="inline-block bg-black text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-zinc-800"
-  >
-    🚀 Get FREE EA Setup Guide (Beginner Safe Strategy)
-  </a>
-</p>
- 
+            <p className="mt-3">
+              <a
+                href="https://tally.so/r/81JKpA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-black text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-zinc-800"
+              >
+                🚀 Get FREE EA Setup Guide (Beginner Safe Strategy)
+              </a>
+            </p>
+
             <div className="mt-6 grid gap-4 md:grid-cols-2">
-  <input
-    id="risk"
-    type="number"
-    placeholder="Risk (USD)"
-    className="rounded-xl border border-zinc-300 p-3"
-  />
-  <input
-    id="reward"
-    type="number"
-    placeholder="Reward (USD)"
-    className="rounded-xl border border-zinc-300 p-3"
-  />
-</div>
+              <input id="risk" type="number" placeholder="Risk (USD)" className="rounded-xl border border-zinc-300 p-3" />
+              <input id="reward" type="number" placeholder="Reward (USD)" className="rounded-xl border border-zinc-300 p-3" />
+            </div>
 
-<button
-  className="mt-4 rounded-xl bg-black text-white px-6 py-3"
-  onClick={() => {
-  const risk = parseFloat(document.getElementById("risk").value);
-const reward = parseFloat(document.getElementById("reward").value);
+            <button
+              className="mt-4 rounded-xl bg-black text-white px-6 py-3"
+              onClick={() => {
+                const risk = parseFloat(document.getElementById("risk").value);
+                const reward = parseFloat(document.getElementById("reward").value);
 
-if (isNaN(risk) || isNaN(reward)) return;
+                if (isNaN(risk) || isNaN(reward)) return;
 
-let ratio;
+                let ratio;
 
-if (reward > risk) {
-  ratio = `1:${parseFloat((reward / risk).toFixed(2))}`;
-} else {
-  ratio = `${parseFloat((risk / reward).toFixed(2))}:1`;
-}
+                if (reward > risk) {
+                  ratio = `1:${parseFloat((reward / risk).toFixed(2))}`;
+                } else {
+                  ratio = `${parseFloat((risk / reward).toFixed(2))}:1`;
+                }
 
-setResult({ ratio });
-}}
->
-  Calculate
-</button>
-<p className="text-xs text-zinc-400 mt-2">
-  Used by beginner traders to manage risk safely
-{result && (
-  <div className="mt-4 rounded-xl border p-4 bg-white">
-    <p><strong>Risk Reward Ratio:</strong> {result.ratio}</p>
-  </div>
-)}
-  
+                setResult({ ratio });
+              }}
+            >
+              Calculate
+            </button>
+
+            <p className="text-xs text-zinc-400 mt-2">
+              Used by beginner traders to manage risk safely
+            </p>
+
+            {result && (
+              <div className="mt-4 rounded-xl border p-4 bg-white">
+                <p><strong>Risk Reward Ratio:</strong> {result.ratio}</p>
+              </div>
+            )}
+
             <div className="mt-6 rounded-2xl border border-zinc-200 bg-zinc-50 p-4">
-  <p className="font-bold text-zinc-950">Formula:</p>
-  <p className="mt-2 text-zinc-600">
-    Risk Reward Ratio = Reward ÷ Risk
-  </p>
-</div>
+              <p className="font-bold text-zinc-950">Formula:</p>
+              <p className="mt-2 text-zinc-600">Risk Reward Ratio = Reward ÷ Risk</p>
+            </div>
           </Card>
-
         </article>
       </ContentPage>
     </>
