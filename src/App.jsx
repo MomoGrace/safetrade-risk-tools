@@ -404,13 +404,11 @@ function Header() {
     <header className="sticky top-0 z-50 border-b border-zinc-200 bg-white/90 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-10 py-4">
         <a href="/" className="text-lg font-black tracking-tight">BytesTrade Risk Tools</a>
-        <nav className="hidden items-center gap-8 text-sm font-medium text-zinc-600 md:flex">
+        <nav className="hidden flex-wrap items-start gap-x-5 gap-y-2 text-sm font-medium text-zinc-600 md:flex">
           <a href="/#ea-calculator" className="hover:text-zinc-950">EA Calculator</a>
           <a href="/#prop-firm" className="hover:text-zinc-950">Prop Firm</a>
           <a href="/drawdown-calculator" className="hover:text-zinc-950">Drawdown Calculator</a>
-           <a href="/risk-reward-calculator" className="hover:text-zinc-950">hidden
-  Risk Reward
-</a>
+           <a href="/risk-reward-calculator" className="hover:text-zinc-950">Risk Reward</a>
           <a href="/forex-market-hours" className="hover:text-zinc-950">Market Hours</a>
           <a href="/privacy-policy" className="hover:text-zinc-950">Privacy Policy</a>
             <a href="/articles" className="hover:text-zinc-950">Articles</a>
