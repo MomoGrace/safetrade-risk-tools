@@ -408,6 +408,10 @@ function Header() {
           <a href="/#ea-calculator" className="hover:text-zinc-950">EA Calculator</a>
           <a href="/#prop-firm" className="hover:text-zinc-950">Prop Firm</a>
           <a href="/drawdown-calculator" className="hover:text-zinc-950">Drawdown Calculator</a>
+           <a href="/risk-reward-calculator" className="hover:text-zinc-950">
+  Risk Reward
+</a>
+
           <a href="/forex-market-hours" className="hover:text-zinc-950">Market Hours</a>
           <a href="/privacy-policy" className="hover:text-zinc-950">Privacy Policy</a>
             <a href="/articles" className="hover:text-zinc-950">Articles</a>
