@@ -2214,7 +2214,7 @@ const [result, setResult] = React.useState(null);
     rel="noopener noreferrer"
     className="inline-block bg-black text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-zinc-800"
   >
-    🚀 Get FREE EA Setup Guide (Avoid Blowing Your Account)
+    🚀 Get FREE EA Setup Guide (Beginner Safe Strategy)
   </a>
 </p>
  
@@ -2255,7 +2255,7 @@ setResult({ ratio });
   Calculate
 </button>
 <p className="text-xs text-zinc-400 mt-2">
-  Used by beginner traders to avoid major losses
+  Used by beginner traders to manage risk safely
 {result && (
   <div className="mt-4 rounded-xl border p-4 bg-white">
     <p><strong>Risk Reward Ratio:</strong> {result.ratio}</p>
