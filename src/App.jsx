@@ -2248,6 +2248,9 @@ setResult({ ratio });
 >
   Calculate
 </button>
+<p className="text-xs text-zinc-400 mt-2">
+  Used by beginner traders to manage risk safely
+</p>
 {result && (
   <div className="mt-4 rounded-xl border p-4 bg-white">
     <p><strong>Risk Reward Ratio:</strong> {result.ratio}</p>
