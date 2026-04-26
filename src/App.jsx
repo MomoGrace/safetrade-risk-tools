@@ -2205,7 +2205,8 @@ function HomePage() {
 }
 
 export default function App() {
-  const path = window.location.pathname;
+  const rawPath = window.location.pathname;
+  const path = rawPath !== "/" ? rawPath.replace(/\/$/, "") : "/";
 
   useEffect(() => {
     const titles = {
