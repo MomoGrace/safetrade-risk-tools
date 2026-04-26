@@ -2208,7 +2208,9 @@ const [result, setResult] = React.useState(null);
 </p>
 
 <p className="text-sm text-zinc-500 mt-2">
-  👉 Want a safer trading setup? Get our free conservative EA guide.
+  👉 <a href="https://tally.so/r/81JKpA" target="_blank" rel="noopener noreferrer" className="underline hover:text-black">
+    Get our free conservative EA setup guide
+  </a>
 </p>
             <div className="mt-6 grid gap-4 md:grid-cols-2">
   <input
