@@ -2126,6 +2126,43 @@ function DrawdownCalculatorPage() {
             <p className="leading-7 text-zinc-600">
               Use this calculator to estimate remaining balance and recovery needed after a trading loss.
             </p>
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+  <input
+    id="balance"
+    type="number"
+    placeholder="Starting Balance (USD)"
+    className="rounded-xl border border-zinc-300 p-3"
+  />
+  <input
+    id="drawdown"
+    type="number"
+    placeholder="Drawdown (%)"
+    className="rounded-xl border border-zinc-300 p-3"
+  />
+</div>
+
+<button
+  className="mt-4 rounded-xl bg-black text-white px-6 py-3"
+  onClick={() => {
+    const balance = parseFloat(document.getElementById("balance").value);
+    const dd = parseFloat(document.getElementById("drawdown").value);
+
+    if (!balance || !dd) return;
+
+    const remaining = balance * (1 - dd / 100);
+    const recovery = (dd / (100 - dd)) * 100;
+
+    alert(
+      "Remaining Balance: $" +
+        remaining.toFixed(2) +
+        "\nRecovery Needed: " +
+        recovery.toFixed(2) +
+        "%"
+    );
+  }}
+>
+  Calculate
+</button>
             <div className="mt-6 rounded-2xl border border-zinc-200 bg-zinc-50 p-4">
               <p className="font-bold text-zinc-950">Formula:</p>
               <p className="mt-2 text-zinc-600">Remaining balance = Starting balance × (1 - Drawdown %)</p>
