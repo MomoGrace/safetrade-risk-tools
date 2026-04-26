@@ -2325,7 +2325,7 @@ export default function App() {
   else if (path === "/disclaimer") page = <DisclaimerPage />;
   else if (path === "/contact") page = <ContactPage />;
   else if (path === "/forex-market-hours") page = <ForexMarketHoursPage />;
-  else if (path === "/drawdown-calculator") page = <DrawdownCalculatorPage />;
+  else if (path === "/drawdown-calculator") page = <RiskRewardCalculatorPage />;
   else if (path === "/articles") page = <ArticlesPage />;
   else if (path === "/articles/what-is-risk-per-trade-in-forex") page = <RiskPerTradeArticlePage />;
   else if (path === "/articles/conservative-ea-settings-for-small-accounts") page = <ConservativeEASettingsArticlePage />;
