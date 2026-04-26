@@ -2437,6 +2437,6 @@ export default function App() {
           </nav>
         </div>
       </footer>
-    </div>For
+    </div>
   );
 }
