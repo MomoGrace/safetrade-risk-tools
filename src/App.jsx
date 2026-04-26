@@ -2104,6 +2104,49 @@ function ForexMarketHoursPage() {
   );
 }
 
+function DrawdownCalculatorPage() {
+  return (
+    <>
+      <PageHero
+        eyebrow="Forex Risk Calculator"
+        title="Drawdown Calculator"
+        description="Calculate account drawdown, remaining balance and recovery percentage for forex, EA and prop firm risk planning."
+      />
+      <ContentPage>
+        <article className="space-y-6">
+          <Card>
+            <h2 className="text-2xl font-bold text-zinc-950 mb-4">Quick Answer: What Is Drawdown?</h2>
+            <p className="leading-7 text-zinc-600">
+              Drawdown is the percentage loss from your account peak balance to a lower balance. If your account drops from USD1,000 to USD800, the drawdown is 20%. Managing drawdown is important because large losses require much bigger gains to recover.
+            </p>
+          </Card>
+
+          <Card>
+            <h2 className="text-2xl font-bold text-zinc-950 mb-4">Drawdown Calculator</h2>
+            <p className="leading-7 text-zinc-600">
+              Use this calculator to estimate remaining balance and recovery needed after a trading loss.
+            </p>
+            <div className="mt-6 rounded-2xl border border-zinc-200 bg-zinc-50 p-4">
+              <p className="font-bold text-zinc-950">Formula:</p>
+              <p className="mt-2 text-zinc-600">Remaining balance = Starting balance × (1 - Drawdown %)</p>
+              <p className="mt-2 text-zinc-600">Recovery needed = Drawdown % ÷ (100 - Drawdown %) × 100</p>
+            </div>
+          </Card>
+
+          <Card>
+            <h2 className="text-xl font-bold text-zinc-950 mb-4">Drawdown Recovery Table</h2>
+            <ul className="text-zinc-600 leading-7 list-disc pl-5 space-y-2">
+              <li>10% loss → need 11% gain</li>
+              <li>20% loss → need 25% gain</li>
+              <li>50% loss → need 100% gain</li>
+              <li>80% loss → need 400% gain</li>
+            </ul>
+          </Card>
+        </article>
+      </ContentPage>
+    </>
+  );
+}
 
 function HomePage() {
   return (
@@ -2235,6 +2278,7 @@ export default function App() {
       "/disclaimer": "Disclaimer | BytesTrade Risk Tools",
       "/contact": "Contact | BytesTrade Risk Tools",
       "/forex-market-hours": "Forex Market Hours & Trading Session Clock | BytesTrade Risk Tools",
+      "/drawdown-calculator": "Drawdown Calculator | BytesTrade Risk Tools",
       "/articles": "Articles | BytesTrade Risk Tools",
       "/articles/what-is-risk-per-trade-in-forex": "What Is Risk per Trade in Forex? | BytesTrade Risk Tools",
       "/articles/conservative-ea-settings-for-small-accounts": "Conservative EA Settings for Small Accounts | BytesTrade Risk Tools",
@@ -2252,6 +2296,7 @@ export default function App() {
   else if (path === "/disclaimer") page = <DisclaimerPage />;
   else if (path === "/contact") page = <ContactPage />;
   else if (path === "/forex-market-hours") page = <ForexMarketHoursPage />;
+  else if (path === "/drawdown-calculator") page = <DrawdownCalculatorPage />;
   else if (path === "/articles") page = <ArticlesPage />;
   else if (path === "/articles/what-is-risk-per-trade-in-forex") page = <RiskPerTradeArticlePage />;
   else if (path === "/articles/conservative-ea-settings-for-small-accounts") page = <ConservativeEASettingsArticlePage />;
