@@ -137,7 +137,7 @@ function ConservativeEACalculator() {
   }, [deposit, mode, stopLossPips, pipValuePerLot]);
 
   return (
-    <Card id="ea-calculator" className="scroll-mt-24">
+   <Card id="calculators" className="scroll-mt-24">
       <div className="mb-6">
         <p className="text-xs font-semibold uppercase tracking-[0.25em] text-zinc-500">Tool 01</p>
         <h3 className="mt-2 text-2xl font-bold text-zinc-950">Conservative EA Setup Calculator</h3>
@@ -415,8 +415,8 @@ function Header() {
             <a href="/about" className="hover:text-zinc-950">About</a>
           <a href="/disclaimer" className="hover:text-zinc-950">Disclaimer</a>
         </nav>
-        <a href={TALLY_URL} target="_blank" rel="noopener noreferrer" className="rounded-full bg-zinc-950 px-5 py-2 text-sm font-semibold text-white hover:bg-zinc-800">
-          Get Setup Guide
+        <a href="#calculators" className="rounded-full bg-zinc-950 px-5 py-2 text-sm font-semibold text-white hover:bg-zinc-800">
+        Calculators
         </a>
       </div>
     </header>
@@ -2276,8 +2276,8 @@ function HomePage() {
                 A beginner-friendly calculator website for conservative EA settings, funded account risk limits, drawdown planning and small account testing.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a href="#ea-calculator" className="rounded-full bg-white px-6 py-3 text-center text-sm font-bold text-zinc-950 hover:bg-zinc-200">
-                  Start Calculating
+                <a href="#calculators" className="rounded-full bg-white px-6 py-3 text-center text-sm font-bold text-zinc-950 hover:bg-zinc-200">
+                Open Calculators             
                 </a>
                 <a href="https://tally.so/r/81JKpA" target="_blank" rel="noopener noreferrer" className="rounded-full border border-zinc-600 px-6 py-3 text-center text-sm font-bold text-white hover:bg-zinc-900">
                   Get Demo Setup Guide
