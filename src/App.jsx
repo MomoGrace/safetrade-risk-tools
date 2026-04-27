@@ -2428,7 +2428,9 @@ export default function App() {
         <div className="mx-auto max-w-7xl flex flex-col gap-4 text-sm text-zinc-600 md:flex-row md:items-center md:justify-between">
           <p>© 2026 BytesTrade Risk Tools. For educational content only.</p>
           <nav className="flex flex-wrap gap-x-4 gap-y-2">
+            <a href="/#calculators" className="hover:text-zinc-950">Calculators</a>
             <a href="/drawdown-calculator" className="hover:text-zinc-950">Drawdown Calculator</a>
+            <a href="/risk-reward-calculator" className="hover:text-zinc-950">Risk Reward</a>    
             <a href="/articles" className="hover:text-zinc-950">Articles</a>
             <a href="/about" className="hover:text-zinc-950">About</a>
             <a href="/privacy-policy" className="hover:text-zinc-950">Privacy Policy</a>
