@@ -390,7 +390,7 @@ function LeadCapture() {
               Send Me the Setup Guide
             </button>
           </form>
-        </Card>header
+        </Card>
       </div>
     </section>
   );
