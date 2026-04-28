@@ -409,6 +409,7 @@ function Header() {
           <a href="/#prop-firm" className="hover:text-zinc-950">Prop Firm</a>
           <a href="/drawdown-calculator" className="hover:text-zinc-950">Drawdown Calculator</a>
            <a href="/risk-reward-calculator" className="hover:text-zinc-950">Risk Reward</a>
+           <a href="/lot-size-calculator" className="hover:text-zinc-950">Lot Size</a>
           <a href="/forex-market-hours" className="hover:text-zinc-950">Market Hours</a>
           <a href="/privacy-policy" className="hover:text-zinc-950">Privacy Policy</a>
             <a href="/articles" className="hover:text-zinc-950">Articles</a>
@@ -2505,6 +2506,7 @@ export default function App() {
   else if (path === "/forex-market-hours") page = <ForexMarketHoursPage />;
   else if (path === "/drawdown-calculator") page = <DrawdownCalculatorPage />;
   else if (path === "/risk-reward-calculator") page = <RiskRewardCalculatorPage />;
+  else if (path === "/lot-size-calculator") page = <LotSizeCalculatorPage />;
   else if (path === "/articles") page = <ArticlesPage />;
   else if (path === "/articles/what-is-risk-per-trade-in-forex") page = <RiskPerTradeArticlePage />;
   else if (path === "/articles/conservative-ea-settings-for-small-accounts") page = <ConservativeEASettingsArticlePage />;
@@ -2523,7 +2525,8 @@ export default function App() {
           <nav className="flex flex-wrap gap-x-4 gap-y-2">
             <a href="/#calculators" className="hover:text-zinc-950">Calculators</a>
             <a href="/drawdown-calculator" className="hover:text-zinc-950">Drawdown Calculator</a>
-            <a href="/risk-reward-calculator" className="hover:text-zinc-950">Risk Reward</a>    
+            <a href="/risk-reward-calculator" className="hover:text-zinc-950">Risk Reward</a>
+            <a href="/lot-size-calculator" className="hover:text-zinc-950">Lot Size Calculator</a>  
             <a href="/articles" className="hover:text-zinc-950">Articles</a>
             <a href="/about" className="hover:text-zinc-950">About</a>
             <a href="/privacy-policy" className="hover:text-zinc-950">Privacy Policy</a>
