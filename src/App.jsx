@@ -446,7 +446,100 @@ function ContentPage({ children }) {
     </main>
   );
 }
+function LotSizeCalculatorPage() {
+  const [result, setResult] = React.useState(null);
 
+  return (
+    <>
+      <PageHero
+        eyebrow="FOREX RISK CALCULATOR"
+        title="Lot Size Calculator Forex (Position Size Calculator Free)"
+        description="Calculate your lot size based on risk percentage, stop loss and account balance."
+      />
+
+      <ContentPage>
+        <article className="space-y-6">
+
+          <Card>
+            <h2 className="text-2xl font-bold text-zinc-950 mb-4">
+              Quick Answer: What Is Lot Size?
+            </h2>
+            <p className="leading-7 text-zinc-600">
+              Lot size in forex determines how much you trade based on your risk. 
+              A proper lot size ensures you only risk a small percentage of your account per trade.
+            </p>
+          </Card>
+
+          <Card>
+            <h2 className="text-2xl font-bold text-zinc-950 mb-4">
+              Lot Size Calculator
+            </h2>
+            <p className="leading-7 text-zinc-600">
+              Enter your account balance, risk percentage, and stop loss to calculate your position size.
+            </p>
+
+            <div className="mt-4 grid gap-4 md:grid-cols-3">
+              <input
+                id="balance"
+                type="number"
+                placeholder="Account Balance (USD)"
+                className="rounded-xl border border-zinc-300 p-3"
+              />
+              <input
+                id="risk"
+                type="number"
+                placeholder="Risk (%)"
+                className="rounded-xl border border-zinc-300 p-3"
+              />
+              <input
+                id="sl"
+                type="number"
+                placeholder="Stop Loss (pips)"
+                className="rounded-xl border border-zinc-300 p-3"
+              />
+            </div>
+
+            <button
+              className="mt-4 rounded-xl bg-black text-white px-6 py-3"
+              onClick={() => {
+                const balance = parseFloat(document.getElementById("balance").value);
+                const risk = parseFloat(document.getElementById("risk").value);
+                const sl = parseFloat(document.getElementById("sl").value);
+
+                if (isNaN(balance) || isNaN(risk) || isNaN(sl)) return;
+
+                const riskAmount = balance * (risk / 100);
+                const lotSize = riskAmount / (sl * 10); // simplified
+
+                setResult(lotSize.toFixed(2));
+              }}
+            >
+              Calculate
+            </button>
+
+            {result && (
+              <div className="mt-4 rounded-xl border p-4 bg-white">
+                <p>
+                  <strong>Lot Size:</strong> {result} lots
+                </p>
+              </div>
+            )}
+          </Card>
+
+          <Card>
+            <h2 className="text-xl font-bold text-zinc-950 mb-3">
+              Formula
+            </h2>
+            <p className="text-zinc-600">
+              Lot Size = Risk Amount ÷ (Stop Loss × Pip Value)
+            </p>
+          </Card>
+
+        </article>
+      </ContentPage>
+    </>
+  );
+}
 function InfoBlock({ title, children }) {
   return (
     <Card>
