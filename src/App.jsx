@@ -535,7 +535,24 @@ function LotSizeCalculatorPage() {
               Lot Size = Risk Amount ÷ (Stop Loss × Pip Value)
             </p>
           </Card>
-
+<Card>
+  <h2 className="text-xl font-bold text-zinc-950 mb-3">
+    Example: How to Calculate Lot Size
+  </h2>
+  <p className="text-zinc-600">
+    If your account balance is $1,000 and you risk 1% per trade, your risk amount is $10.
+    With a stop loss of 50 pips, your lot size would be approximately 0.02 lots.
+  </p>
+</Card>
+<Card>
+  <h2 className="text-xl font-bold text-zinc-950 mb-3">
+    Why Lot Size Is Important
+  </h2>
+  <p className="text-zinc-600">
+    Using the correct lot size helps you control risk and avoid blowing your account.
+    It is one of the most important concepts for forex beginners and prop firm traders.
+  </p>
+</Card>
         </article>
       </ContentPage>
     </>
