@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Forex Lot Size Calculator - Calculate Position Size by Risk</title>
+  <meta name="description" content="Free forex lot size calculator. Estimate position size using account balance, risk percentage, stop loss pips, and pip value.">
+  <link rel="canonical" href="https://www.bytestrade.com/lot-size-calculator">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Forex Lot Size Calculator - Calculate Position Size by Risk">
+  <meta property="og:description" content="Free forex lot size calculator. Estimate position size using account balance, risk percentage, stop loss pips, and pip value.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.bytestrade.com/lot-size-calculator">
+  <meta property="og:site_name" content="BytesTrade">
+  <meta name="twitter:card" content="summary_large_image">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5952834143682557" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/styles.css">
+  <script defer src="/script.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "BytesTrade",
+      "url": "https://www.bytestrade.com",
+      "description": "Free forex risk calculators and educational guides for lot size, drawdown, risk reward, and prop firm loss rules.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "BytesTrade",
+        "url": "https://www.bytestrade.com"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Forex Lot Size Calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "url": "https://www.bytestrade.com/lot-size-calculator",
+      "description": "Free forex lot size calculator for estimating position size using account balance, risk percentage, stop loss pips, and pip value.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a safe risk per trade in forex?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Many conservative traders risk between 0.25% and 1% of their account per trade, especially when trading small accounts or funded accounts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is 2% risk per trade too much?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A 2% risk per trade can be aggressive for beginners because several losing trades in a row may create a large drawdown."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a lot size calculator prevent losses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No calculator can prevent losses, but it can help traders understand the amount they are risking before entering a trade."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="/" aria-label="BytesTrade home">
+      <span class="logo-mark">BT</span>
+      <span>BytesTrade</span>
+    </a>
+    <button class="mobile-menu-button" id="mobileMenuButton" aria-expanded="false" aria-controls="mainNav">Menu</button>
+    <nav class="nav" id="mainNav" aria-label="Main navigation">
+      <a href="/">Home</a>
+<a href="/lot-size-calculator" aria-current="page">Lot Size</a>
+<a href="/drawdown-calculator">Drawdown</a>
+<a href="/risk-reward-calculator">Risk Reward</a>
+<a href="/articles/prop-firm-daily-loss-and-max-drawdown-explained">Prop Firm Guide</a>
+<a href="/about">About</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="section">
+    <div class="container">
+      <div class="breadcrumbs"><a href="/">Home</a> / Lot Size Calculator</div>
+      <div class="section-head">
+        <span class="kicker">Free Forex Calculator</span>
+        <h1>Forex Lot Size Calculator</h1>
+        <p class="lead">Calculate position size based on account balance, risk percentage, stop loss distance, and pip value.</p>
+      </div>
+      <div class="calculator-layout">
+        <section class="calculator-card">
+          <h2>Enter your trade risk</h2>
+          <div class="form-grid">
+            <label>Account balance
+              <input id="accountBalance" type="number" value="1000" min="0" step="10">
+            </label>
+            <label>Risk per trade (%)
+              <input id="riskPercent" type="number" value="1" min="0" step="0.1">
+            </label>
+            <label>Stop loss distance (pips)
+              <input id="stopLossPips" type="number" value="20" min="0" step="1">
+            </label>
+            <label>Pip value per 1 standard lot
+              <input id="pipValue" type="number" value="10" min="0" step="0.1">
+            </label>
+          </div>
+        </section>
+        <aside class="calculator-card">
+          <h2>Result</h2>
+          <div class="result-box">
+            <div class="result-label">Estimated standard lots</div>
+            <div class="result-value" id="lotResult">0.00</div>
+            <p class="small">This is an educational estimate. Check your broker contract size and pip value before trading.</p>
+          </div>
+          <div class="stat-grid">
+            <div class="stat"><strong id="riskAmountResult">$0.00</strong><span>Risk amount</span></div>
+            <div class="stat"><strong id="microLotResult">0 micro lots</strong><span>Approx. micro lots</span></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container content-card">
+      <h2>What Is a Forex Lot Size Calculator?</h2>
+      <p>
+        A forex lot size calculator helps traders estimate the correct position size based on account
+        balance, risk percentage, stop loss distance, and currency pair pip value. This is useful because
+        trading with an oversized lot can cause large losses even when the trading idea is reasonable.
+      </p>
+      <h2>Why Lot Size Matters in Forex Trading</h2>
+      <p>
+        Lot size directly affects how much money is gained or lost per pip. A smaller lot size reduces
+        account pressure, while a larger lot size increases both potential profit and potential loss.
+        For beginners and prop firm traders, controlling lot size is one of the most important parts
+        of risk management.
+      </p>
+      <h2>Example</h2>
+      <p>
+        If a trader has a $1,000 account and wants to risk 1% per trade, the maximum risk is $10.
+        If the stop loss is 20 pips, the lot size should be calculated so that a 20-pip loss does not
+        exceed $10.
+      </p>
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>What is a safe risk per trade in forex?</h3>
+        <p>Many conservative traders risk between 0.25% and 1% of their account per trade, especially when trading small accounts or funded accounts.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is 2% risk per trade too much?</h3>
+        <p>A 2% risk per trade can be aggressive for beginners because several losing trades in a row may create a large drawdown.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can a lot size calculator prevent losses?</h3>
+        <p>No calculator can prevent losses, but it can help traders understand the amount they are risking before entering a trade.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Why is my broker lot size different?</h3>
+        <p>Different brokers may use different symbol specifications, contract sizes, or pip value calculations. Always confirm the final position size inside your trading platform.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a class="logo" href="/">
+        <span class="logo-mark">BT</span>
+        <span>BytesTrade</span>
+      </a>
+      <p class="small" style="margin-top:12px;">Free forex risk tools for educational purposes only. BytesTrade does not provide financial advice, investment advice, or trading recommendations.</p>
+      <p class="small">© 2026 BytesTrade. All rights reserved.</p>
+    </div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/lot-size-calculator">Lot Size Calculator</a>
+      <a href="/drawdown-calculator">Drawdown Calculator</a>
+      <a href="/risk-reward-calculator">Risk Reward Calculator</a>
+      <a href="/articles/prop-firm-daily-loss-and-max-drawdown-explained">Prop Firm Guide</a>
+      <a href="/articles/forex-risk-management-guide">Risk Management Guide</a>
+      <a href="/about">About</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
