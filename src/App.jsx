@@ -414,7 +414,6 @@ function Header() {
           <a href="/privacy-policy" className="hover:text-zinc-950">Privacy Policy</a>
             <a href="/articles" className="hover:text-zinc-950">Articles</a>
             <a href="/about" className="hover:text-zinc-950">About</a>
-         <a href="mailto:bytestrade@proton.me" className="hover:text-zinc-950">Contact</a>
           <a href="/disclaimer" className="hover:text-zinc-950">Disclaimer</a>
         </nav>
         <a href="#calculators" className="rounded-full bg-zinc-950 px-5 py-2 text-sm font-semibold text-white hover:bg-zinc-800">
