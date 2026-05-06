@@ -736,7 +736,7 @@ function ContactPage() {
           .
          </p>
             <a href={TALLY_URL} target="_blank" rel="noopener noreferrer" className="inline-flex rounded-full bg-zinc-950 px-6 py-3 text-sm font-bold text-white hover:bg-zinc-800">
-              Open Contact Form
+              Get Free PDF Guide
             </a>
           </InfoBlock>
 
