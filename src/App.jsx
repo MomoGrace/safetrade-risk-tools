@@ -726,6 +726,13 @@ function ContactPage() {
             <p>
               The fastest way to contact us is through the setup guide form. Your submission will be saved and we will follow up when possible.
             </p>
+            <p className="mt-4">
+        You can also contact us directly at{" "}
+        <a href="mailto:bytestrade@proton.me" className="font-semibold text-zinc-950 underline">
+         bytestrade@proton.me
+         </a>
+          .
+         </p>
             <a href={TALLY_URL} target="_blank" rel="noopener noreferrer" className="inline-flex rounded-full bg-zinc-950 px-6 py-3 text-sm font-bold text-white hover:bg-zinc-800">
               Open Contact Form
             </a>
