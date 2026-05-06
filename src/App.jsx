@@ -723,11 +723,13 @@ function ContactPage() {
       <ContentPage>
         <div className="grid gap-6 md:grid-cols-[1fr_0.85fr]">
           <InfoBlock title="Get the setup guide">
-            <p>
-              The fastest way to contact us is through the setup guide form. Your submission will be saved and we will follow up when possible.
+      
+             <p>
+            The fastest way to get the setup guide is through the form below. After submitting the form, you can access the PDF guide directly.
             </p>
+            
             <p className="mt-4">
-        You can also contact us directly at{" "}
+        For general questions, you can also contact us directly at{" "}
         <a href="mailto:bytestrade@proton.me" className="font-semibold text-zinc-950 underline">
          bytestrade@proton.me
          </a>
