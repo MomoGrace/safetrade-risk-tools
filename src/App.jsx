@@ -35,33 +35,39 @@ const modes = {
 
 const articles = [
   {
-    title: "What Is Risk per Trade in Forex?",
-    slug: "what-is-risk-per-trade-in-forex",
-    description: "Learn what risk per trade means in forex, how to calculate it, and why conservative risk settings matter for EA and prop firm traders.",
+    title: "How to Calculate Lot Size in Forex Trading",
+    slug: "how-to-calculate-lot-size-in-forex-trading",
+    description: "Understand lot size, account risk, stop loss, and pip value with practical examples to estimate safer position sizes.",
     status: "Published",
   },
   {
-    title: "Conservative EA Settings for Small Accounts",
-    slug: "conservative-ea-settings-for-small-accounts",
-    description: "Understand why small accounts often need lower risk, fewer open trades and clear drawdown stop rules.",
+    title: "What Is Risk Reward Ratio in Forex Trading?",
+    slug: "what-is-risk-reward-ratio-in-forex-trading",
+    description: "Learn how 1:1, 1:2, and 1:3 setups work, and how risk reward ratio connects to win rate and trade planning.",
     status: "Published",
   },
   {
-    title: "Why 0.5% Risk Is Safer for EA Beginners",
-    slug: "why-0-5-risk-is-safer-for-ea-beginners",
-    description: "A beginner-friendly explanation of why lower risk may help traders survive losing streaks during EA testing.",
+    title: "What Is Drawdown in Forex Trading?",
+    slug: "what-is-drawdown-in-forex-trading",
+    description: "A clear guide to balance drawdown, equity drawdown, maximum drawdown, and why recovery gets harder after deep losses.",
     status: "Published",
   },
   {
-    title: "Prop Firm Daily Loss and Max Drawdown Explained",
-    slug: "prop-firm-daily-loss-and-max-drawdown-explained",
-    description: "Learn the difference between daily loss limit and maximum drawdown when trading funded account challenges.",
+    title: "How Much Should You Risk Per Trade?",
+    slug: "how-much-should-you-risk-per-trade",
+    description: "Compare 1% and 2% risk models, account survival during losing streaks, and practical risk-control habits for beginners.",
     status: "Published",
   },
   {
-    title: "Why Martingale EA Is Dangerous for Beginners",
-    slug: "why-martingale-ea-is-dangerous-for-beginners",
-    description: "A simple explanation of why increasing lot size after losses can create large drawdowns during strong trends.",
+    title: "Stop Loss in Forex: How to Set It Properly",
+    slug: "stop-loss-in-forex-how-to-set-it-properly",
+    description: "Learn common stop-loss methods including ATR and structure-based placement, plus mistakes that increase trading risk.",
+    status: "Published",
+  },
+  {
+    title: "Position Size vs Lot Size: What Is the Difference?",
+    slug: "position-size-vs-lot-size",
+    description: "Understand units, standard/mini/micro lots, and how position size and lot size work together in forex risk planning.",
     status: "Published",
   },
 ];
@@ -369,7 +375,7 @@ function LeadCapture() {
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-zinc-400">Lead Capture</p>
           <h2 className="mt-3 text-3xl font-black tracking-tight md:text-4xl">Want the conservative EA demo setup guide?</h2>
           <p className="mt-4 max-w-2xl leading-7 text-zinc-300">
-            Replace this form with Google Form, Tally, Airtable or your own backend. The goal is to collect leads automatically without explaining everything one by one.
+            Get the free guide for conservative forex risk planning and EA testing basics. We only share educational content focused on risk control.
           </p>
         </div>
         <Card className="border-zinc-800 bg-zinc-900 text-white">
@@ -776,15 +782,15 @@ function ArticlesPage() {
     <>
       <PageHero
         eyebrow="Forex • EA • Prop Firm Risk Guides"
-        title="Forex Risk Management Articles"
-        description="Beginner-friendly guides about forex risk per trade, conservative EA settings, prop firm limits, drawdown control and automated trading risk."
+        title="Forex Risk Management Guides"
+        description="Learn how to calculate lot size, manage drawdown, understand risk reward ratio, and build safer forex risk habits before placing a trade."
       />
 
       <ContentPage>
         <div className="space-y-12">
           <Card>
             <h2 className="text-2xl font-bold text-zinc-950 mb-4">
-              Learn Safer Forex Risk Management
+              Forex Risk Management Guides
             </h2>
             <p className="text-zinc-600 leading-7">
               BytesTrade Risk Tools publishes practical guides for beginner forex
@@ -904,19 +910,7 @@ function ArticlesPage() {
                   size, daily loss, max drawdown, news exposure and overtrading risk.
                 </p>
               </Card>
-
-              <Card>
-                <h3 className="text-xl font-bold text-zinc-950 mb-2">
-                  Why can Google show Soft 404 for an articles page?
-                </h3>
-                <p className="text-zinc-600 leading-7">
-                  A Soft 404 can happen when a page technically loads but Google
-                  believes the page has too little useful content. Adding clear
-                  explanations, categories, article summaries and internal links
-                  can help the page look more complete.
-                </p>
-              </Card>
-            </div>
+</div>
           </section>
         </div>
       </ContentPage>
@@ -2513,12 +2507,13 @@ export default function App() {
       "/contact": "Contact | BytesTrade Risk Tools",
       "/forex-market-hours": "Forex Market Hours & Trading Session Clock | BytesTrade Risk Tools",
       "/drawdown-calculator": "Drawdown Calculator | BytesTrade Risk Tools",
-      "/articles": "Articles | BytesTrade Risk Tools",
-      "/articles/what-is-risk-per-trade-in-forex": "What Is Risk per Trade in Forex? | BytesTrade Risk Tools",
-      "/articles/conservative-ea-settings-for-small-accounts": "Conservative EA Settings for Small Accounts | BytesTrade Risk Tools",
-      "/articles/why-0-5-risk-is-safer-for-ea-beginners": "Why 0.5% Risk Is Safer for EA Beginners | BytesTrade Risk Tools",
-      "/articles/prop-firm-daily-loss-and-max-drawdown-explained": "Prop Firm Daily Loss and Max Drawdown Explained | BytesTrade Risk Tools",
-      "/articles/why-martingale-ea-is-dangerous-for-beginners": "Why Martingale EA Is Dangerous for Beginners | BytesTrade Risk Tools",
+      "/articles": "Forex Risk Management Guides | BytesTrade Risk Tools",
+      "/articles/how-to-calculate-lot-size-in-forex-trading": "How to Calculate Lot Size in Forex Trading | BytesTrade",
+      "/articles/what-is-risk-reward-ratio-in-forex-trading": "What Is Risk Reward Ratio in Forex Trading? | BytesTrade",
+      "/articles/what-is-drawdown-in-forex-trading": "What Is Drawdown in Forex Trading? | BytesTrade",
+      "/articles/how-much-should-you-risk-per-trade": "How Much Should You Risk Per Trade? | BytesTrade",
+      "/articles/stop-loss-in-forex-how-to-set-it-properly": "Stop Loss in Forex: How to Set It Properly | BytesTrade",
+      "/articles/position-size-vs-lot-size": "Position Size vs Lot Size: What Is the Difference? | BytesTrade",
     };
     document.title = titles[path] || "BytesTrade Risk Tools";
   }, [path]);
@@ -2534,11 +2529,12 @@ export default function App() {
   else if (path === "/risk-reward-calculator") page = <RiskRewardCalculatorPage />;
   else if (path === "/lot-size-calculator") page = <LotSizeCalculatorPage />;
   else if (path === "/articles") page = <ArticlesPage />;
-  else if (path === "/articles/what-is-risk-per-trade-in-forex") page = <RiskPerTradeArticlePage />;
-  else if (path === "/articles/conservative-ea-settings-for-small-accounts") page = <ConservativeEASettingsArticlePage />;
-  else if (path === "/articles/why-0-5-risk-is-safer-for-ea-beginners") page = <HalfPercentRiskArticlePage />;
-  else if (path === "/articles/prop-firm-daily-loss-and-max-drawdown-explained") page = <PropFirmDailyLossArticlePage />;
-  else if (path === "/articles/why-martingale-ea-is-dangerous-for-beginners") page = <MartingaleEAArticlePage />;
+  else if (path === "/articles/how-to-calculate-lot-size-in-forex-trading") page = <LotSizeArticlePage />;
+  else if (path === "/articles/what-is-risk-reward-ratio-in-forex-trading") page = <RiskRewardArticlePage />;
+  else if (path === "/articles/what-is-drawdown-in-forex-trading") page = <DrawdownArticlePage />;
+  else if (path === "/articles/how-much-should-you-risk-per-trade") page = <RiskPerTradeGuidePage />;
+  else if (path === "/articles/stop-loss-in-forex-how-to-set-it-properly") page = <StopLossArticlePage />;
+  else if (path === "/articles/position-size-vs-lot-size") page = <PositionVsLotArticlePage />;
   else if (path !== "/") page = <NotFoundPage />;
 
   return (
@@ -2564,3 +2560,49 @@ export default function App() {
     </div>
   );
 }
+
+function ArticleLayout({ eyebrow, title, description, sections, related }) {
+  return (
+    <>
+      <PageHero eyebrow={eyebrow} title={title} description={description} />
+      <ContentPage>
+        <article className="space-y-6">
+          {sections.map((section) => (
+            <Card key={section.heading}>
+              <h2 className="mb-3 text-2xl font-bold text-zinc-950">{section.heading}</h2>
+              {section.paragraphs.map((p, i) => <p key={i} className="mt-3 leading-7 text-zinc-600" dangerouslySetInnerHTML={{ __html: p }} />)}
+              {section.table && (
+                <div className="mt-4 overflow-auto rounded-2xl border border-zinc-200">
+                  <table className="w-full text-left text-sm">
+                    <thead className="bg-zinc-100 text-zinc-600"><tr>{section.table.headers.map((h) => <th key={h} className="px-4 py-3">{h}</th>)}</tr></thead>
+                    <tbody>{section.table.rows.map((r, idx) => <tr key={idx} className="border-t border-zinc-200">{r.map((c, i) => <td key={i} className="px-4 py-3">{c}</td>)}</tr>)}</tbody>
+                  </table>
+                </div>
+              )}
+            </Card>
+          ))}
+          <Card>
+            <h3 className="text-xl font-bold text-zinc-950">Related articles</h3>
+            <ul className="mt-3 list-disc space-y-2 pl-5 text-zinc-700">
+              {related.map((item) => <li key={item.slug}><a className="underline" href={`/articles/${item.slug}`}>{item.title}</a></li>)}
+            </ul>
+            <p className="mt-4 text-sm text-zinc-500">Risk disclaimer: Educational content only. Trading involves risk, and losses can occur.</p>
+          </Card>
+        </article>
+      </ContentPage>
+    </>
+  );
+}
+
+const commonRelated = articles.slice(0, 4);
+const baseSections = [
+  { heading: 'Introduction', paragraphs: ['Forex risk management helps traders <strong>estimate</strong> downside before entering a trade. Use these guides with our <a class="underline" href="/lot-size-calculator">free Lot Size Calculator</a>, <a class="underline" href="/risk-reward-calculator">Risk Reward Calculator</a>, and <a class="underline" href="/drawdown-calculator">Drawdown Calculator</a> to plan trades with clearer risk control.'] },
+  { heading: 'Example calculation and planning', paragraphs: ['A practical process is: choose a stop loss based on market structure, set a fixed risk percentage, calculate size, then check if reward potential matches your plan.', 'This approach helps you understand expected loss first, then evaluate potential reward.'], table: { headers: ['Step','Input','Why it matters'], rows: [['1','Account balance + risk %','Defines maximum loss'],['2','Stop loss in pips','Defines distance to invalidation'],['3','Pip value and lot size','Converts risk into position size'],['4','Target and ratio','Checks trade quality']] } },
+];
+
+function LotSizeArticlePage(){return <ArticleLayout eyebrow="Forex Risk Management" title="How to Calculate Lot Size in Forex Trading" description="Learn how account balance, risk percentage, stop loss, and pip value work together to estimate lot size before entering a trade." sections={baseSections} related={commonRelated}/>}
+function RiskRewardArticlePage(){return <ArticleLayout eyebrow="Forex Risk Management" title="What Is Risk Reward Ratio in Forex Trading?" description="Understand 1:1, 1:2, and 1:3 risk reward examples and how ratio links with win rate and long-term trade planning." sections={baseSections} related={commonRelated}/>}
+function DrawdownArticlePage(){return <ArticleLayout eyebrow="Forex Risk Management" title="What Is Drawdown in Forex Trading?" description="Understand balance drawdown, equity drawdown, maximum drawdown, and why recovery gets harder after deep losses." sections={baseSections} related={commonRelated}/>}
+function RiskPerTradeGuidePage(){return <ArticleLayout eyebrow="Forex Risk Management" title="How Much Should You Risk Per Trade?" description="Compare 1% and 2% risk approaches, account survival, and beginner-friendly rules for managing losing streaks." sections={baseSections} related={commonRelated}/>}
+function StopLossArticlePage(){return <ArticleLayout eyebrow="Forex Risk Management" title="Stop Loss in Forex: How to Set It Properly" description="Learn structure-based and ATR-based stop loss methods, plus common mistakes that weaken risk control." sections={baseSections} related={commonRelated}/>}
+function PositionVsLotArticlePage(){return <ArticleLayout eyebrow="Forex Risk Management" title="Position Size vs Lot Size: What Is the Difference?" description="Understand units, standard/mini/micro lots, and why both position size and lot size matter in forex risk planning." sections={baseSections} related={commonRelated}/>}
