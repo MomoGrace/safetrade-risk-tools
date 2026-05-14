@@ -104,6 +104,9 @@ const articles = [
     status: "Published",
   },
 ];
+const allArticles = [...articles, ...legacyArticles];
+
+function filteredRelatedAll(slug){ return allArticles.filter((a)=>a.slug!==slug); }
 
 function money(value) {
   const safe = Number.isFinite(value) ? value : 0;
@@ -1152,9 +1155,7 @@ function RiskPerTradeArticlePage() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-zinc-200 bg-white p-6 text-sm leading-7 text-zinc-600">
-            <strong className="text-zinc-950">Risk Disclaimer:</strong> Forex and CFD trading involve risk and may not be suitable for all investors. This article is for educational purposes only and does not provide financial advice, investment advice, trading signals or profit guarantees. Past performance does not guarantee future results. Trade only with money you can afford to lose.
-          </div>
+          <LegacyArticleResources slug="what-is-risk-per-trade-in-forex" />
         </article>
       </ContentPage>
     </>
@@ -1374,9 +1375,7 @@ function ConservativeEASettingsArticlePage() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-zinc-200 bg-white p-6 text-sm leading-7 text-zinc-600">
-            <strong className="text-zinc-950">Risk Disclaimer:</strong> Forex and CFD trading involve risk and may not be suitable for all investors. This article is for educational and risk-planning purposes only. It does not provide financial advice, investment advice, trading signals or profit guarantees. Past performance does not guarantee future results. Trade only with money you can afford to lose.
-          </div>
+          <LegacyArticleResources slug="conservative-ea-settings-for-small-accounts" />
         </article>
       </ContentPage>
     </>
@@ -1571,9 +1570,7 @@ function HalfPercentRiskArticlePage() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-zinc-200 bg-white p-6 text-sm leading-7 text-zinc-600">
-            <strong className="text-zinc-950">Risk Disclaimer:</strong> Forex and CFD trading involve risk and may not be suitable for all investors. This article is for educational and risk-planning purposes only. It does not provide financial advice, investment advice, trading signals or profit guarantees. Past performance does not guarantee future results. Trade only with money you can afford to lose.
-          </div>
+          <LegacyArticleResources slug="why-0-5-risk-is-safer-for-ea-beginners" />
         </article>
       </ContentPage>
     </>
@@ -1827,9 +1824,7 @@ function PropFirmDailyLossArticlePage() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-zinc-200 bg-white p-6 text-sm leading-7 text-zinc-600">
-            <strong className="text-zinc-950">Risk Disclaimer:</strong> Prop firm rules vary by company and can change. Always read the official rules of the prop firm you use. This article is for educational and risk-planning purposes only. It does not provide financial advice, investment advice, trading signals or profit guarantees. Forex and CFD trading involve risk. Past performance does not guarantee future results.
-          </div>
+          <LegacyArticleResources slug="prop-firm-daily-loss-and-max-drawdown-explained" />
         </article>
       </ContentPage>
     </>
@@ -2098,9 +2093,7 @@ function MartingaleEAArticlePage() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-zinc-200 bg-white p-6 text-sm leading-7 text-zinc-600">
-            <strong className="text-zinc-950">Risk Disclaimer:</strong> Forex and CFD trading involve risk and may not be suitable for all investors. This article is for educational and risk-planning purposes only. It does not provide financial advice, investment advice, trading signals or profit guarantees. Past performance does not guarantee future results. Trade only with money you can afford to lose.
-          </div>
+          <LegacyArticleResources slug="why-martingale-ea-is-dangerous-for-beginners" />
         </article>
       </ContentPage>
     </>
@@ -2108,6 +2101,25 @@ function MartingaleEAArticlePage() {
 }
 
 
+
+function LegacyArticleResources({ slug }) {
+  const related = filteredRelatedAll(slug).slice(0, 6);
+  return (
+    <>
+      <Card>
+        <h2 className="text-2xl font-bold text-zinc-950">Related articles</h2>
+        <ul className="mt-4 list-disc space-y-2 pl-5 text-zinc-700">
+          {related.map((item) => (
+            <li key={item.slug}><a className="underline" href={`/articles/${item.slug}`}>{item.title}</a></li>
+          ))}
+        </ul>
+      </Card>
+      <div className="rounded-2xl border border-zinc-200 bg-white p-6 text-sm leading-7 text-zinc-600">
+        <strong className="text-zinc-950">Risk Disclaimer:</strong> Forex and CFD trading involve risk and may not be suitable for all investors. This article is for educational purposes only and is not financial advice.
+      </div>
+    </>
+  );
+}
 
 function ForexMarketHoursPage() {
   const sessions = [
@@ -2582,6 +2594,11 @@ export default function App() {
       "/articles/how-much-should-you-risk-per-trade": "How Much Should You Risk Per Trade? | BytesTrade",
       "/articles/stop-loss-in-forex-how-to-set-it-properly": "Stop Loss in Forex: How to Set It Properly | BytesTrade",
       "/articles/position-size-vs-lot-size": "Position Size vs Lot Size: What Is the Difference? | BytesTrade",
+      "/articles/what-is-risk-per-trade-in-forex": "What Is Risk Per Trade in Forex? | BytesTrade",
+      "/articles/conservative-ea-settings-for-small-accounts": "Conservative EA Settings for Small Accounts | BytesTrade",
+      "/articles/why-0-5-risk-is-safer-for-ea-beginners": "Why 0.5% Risk Is Safer for EA Beginners | BytesTrade",
+      "/articles/prop-firm-daily-loss-and-max-drawdown-explained": "Prop Firm Daily Loss and Max Drawdown Explained | BytesTrade",
+      "/articles/why-martingale-ea-is-dangerous-for-beginners": "Why Martingale EA Is Dangerous for Beginners | BytesTrade",
     };
     document.title = titles[path] || "BytesTrade Risk Tools";
   }, [path]);
@@ -2603,6 +2620,11 @@ export default function App() {
   else if (path === "/articles/how-much-should-you-risk-per-trade") page = <RiskPerTradeGuidePage />;
   else if (path === "/articles/stop-loss-in-forex-how-to-set-it-properly") page = <StopLossArticlePage />;
   else if (path === "/articles/position-size-vs-lot-size") page = <PositionVsLotArticlePage />;
+  else if (path === "/articles/what-is-risk-per-trade-in-forex") page = <RiskPerTradeArticlePage />;
+  else if (path === "/articles/conservative-ea-settings-for-small-accounts") page = <ConservativeEASettingsArticlePage />;
+  else if (path === "/articles/why-0-5-risk-is-safer-for-ea-beginners") page = <HalfPercentRiskArticlePage />;
+  else if (path === "/articles/prop-firm-daily-loss-and-max-drawdown-explained") page = <PropFirmDailyLossArticlePage />;
+  else if (path === "/articles/why-martingale-ea-is-dangerous-for-beginners") page = <MartingaleEAArticlePage />;
   else if (path !== "/") page = <NotFoundPage />;
 
   return (
