@@ -2446,9 +2446,9 @@ function HomePage() {
 
         <section className="bg-white px-5 py-16">
           <SectionTitle
-            eyebrow="SEO Content Section"
+            eyebrow="Forex Risk Management Guides"
             title="Why conservative EA risk settings matter"
-            description="This section is important for SEO and AdSense. A calculator page should include helpful explanations, not just input boxes."
+            description="Learn the core risk principles that help beginners test expert advisors with better discipline and consistency."
           />
           <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-3">
             <Card>
@@ -2474,9 +2474,9 @@ function HomePage() {
 
         <section className="px-5 py-16">
           <SectionTitle
-            eyebrow="Content Ideas"
-            title="Next SEO articles to add"
-            description="These article topics can help the website grow beyond a thin calculator page."
+            eyebrow="More Forex Trading Guides"
+            title="Explore more beginner risk topics"
+            description="Continue learning with practical guides focused on safer forex risk planning and account protection."
           />
           <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-3">
             {articles.map((article) => (
