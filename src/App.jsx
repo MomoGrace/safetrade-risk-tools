@@ -116,7 +116,8 @@ const articles = [
     status: "Published",
   },
 ];
-const allArticles = [...articles, ...legacyArticles];
+const latestArticles = articles;
+const allArticles = [...latestArticles, ...legacyArticles];
 
 function filteredRelatedAll(slug){ return allArticles.filter((a)=>a.slug!==slug); }
 
@@ -892,11 +893,11 @@ function ArticlesPage() {
             </h2>
 
             <div className="grid gap-5 md:grid-cols-2">
-              {articles.map((article) => (
+              {latestArticles.map((article) => (
                 <Card key={article.slug}>
                   <div className="mb-3 flex items-center justify-between gap-3">
                     <span className="rounded-full bg-zinc-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-zinc-500">
-                      {article.status}
+                      PUBLISHED
                     </span>
                   </div>
 
