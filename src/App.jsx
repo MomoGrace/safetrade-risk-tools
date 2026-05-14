@@ -33,6 +33,39 @@ const modes = {
   },
 };
 
+const legacyArticles = [
+  {
+    title: "What Is Risk Per Trade in Forex?",
+    slug: "what-is-risk-per-trade-in-forex",
+    description: "Learn what risk per trade means in forex, how to size positions conservatively, and why smaller risk helps account survival.",
+    status: "Published",
+  },
+  {
+    title: "Conservative EA Settings for Small Accounts",
+    slug: "conservative-ea-settings-for-small-accounts",
+    description: "Discover safer EA parameters for small balances, including lower lot size, strict stop rules, and realistic return expectations.",
+    status: "Published",
+  },
+  {
+    title: "Why 0.5% Risk Is Safer for EA Beginners",
+    slug: "why-0-5-risk-is-safer-for-ea-beginners",
+    description: "See why using 0.5% risk per trade can reduce drawdown pressure and help beginner EA users avoid fast account damage.",
+    status: "Published",
+  },
+  {
+    title: "Prop Firm Daily Loss and Max Drawdown Explained",
+    slug: "prop-firm-daily-loss-and-max-drawdown-explained",
+    description: "Understand the difference between daily loss limits and max drawdown, and how to trade funded challenges with tighter control.",
+    status: "Published",
+  },
+  {
+    title: "Why Martingale EA Is Dangerous for Beginners",
+    slug: "why-martingale-ea-is-dangerous-for-beginners",
+    description: "Learn the key risks of martingale systems, including escalating exposure, deeper drawdowns, and higher blow-up probability.",
+    status: "Published",
+  },
+];
+
 const articles = [
   {
     title: "How to Calculate Lot Size in Forex Trading",
@@ -845,6 +878,41 @@ function ArticlesPage() {
 
             <div className="grid gap-5 md:grid-cols-2">
               {articles.map((article) => (
+                <Card key={article.slug}>
+                  <div className="mb-3 flex items-center justify-between gap-3">
+                    <span className="rounded-full bg-zinc-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-zinc-500">
+                      {article.status}
+                    </span>
+                  </div>
+
+                  <h3 className="text-2xl font-bold text-zinc-950 mb-3">
+                    <a href={`/articles/${article.slug}/`}>
+                      {article.title}
+                    </a>
+                  </h3>
+
+                  <p className="text-zinc-600 leading-7 mb-5">
+                    {article.description}
+                  </p>
+
+                  <a
+                    href={`/articles/${article.slug}/`}
+                    className="font-semibold text-zinc-950 underline"
+                  >
+                    Read More
+                  </a>
+                </Card>
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold text-zinc-950 mb-5">
+              More Forex Risk Guides
+            </h2>
+
+            <div className="grid gap-5 md:grid-cols-2">
+              {legacyArticles.map((article) => (
                 <Card key={article.slug}>
                   <div className="mb-3 flex items-center justify-between gap-3">
                     <span className="rounded-full bg-zinc-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-zinc-500">
